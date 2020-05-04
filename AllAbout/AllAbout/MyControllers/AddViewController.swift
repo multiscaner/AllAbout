@@ -12,6 +12,8 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
 	
 	@IBOutlet weak var photoPlace: UIImageView!
 	
+	@IBOutlet weak var nameTextField: UITextField!
+	
 	let imagePicker = UIImagePickerController()
 	
 	override func viewDidLoad() {
@@ -33,5 +35,9 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
 		
 		dismiss(animated: true, completion: nil)
 	}
-
+	@IBAction func saveName(_ sender: UIButton) {
+		if nameTextField.text != nil {
+			UserDefaults.standard.set(nameTextField.text, forKey: "name")
+		}
+	}
 }

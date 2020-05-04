@@ -64,37 +64,83 @@
                     <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wxa-tQ-Wcf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TUe-9k-5Zb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TUe-9k-5Zb">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="sectionIndexBackgroundColor" name="MyDarkGreen"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="OIc-yT-lc0">
+                                    <rect key="frame" x="0.0" y="256" width="375" height="194"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5h-kH-XHc">
+                                            <rect key="frame" x="112.5" y="20.5" width="150" height="150.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="150" id="0Ow-Ii-VYS"/>
+                                                <constraint firstAttribute="height" constant="150" id="BQr-gP-jLm"/>
+                                            </constraints>
+                                            <state key="normal" image="addPhoto"/>
+                                            <connections>
+                                                <segue destination="V6T-dd-EHa" kind="presentation" id="ocA-aC-2Ol"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="s5h-kH-XHc" secondAttribute="bottom" constant="23" id="7pq-hY-bui"/>
+                                        <constraint firstItem="s5h-kH-XHc" firstAttribute="centerX" secondItem="OIc-yT-lc0" secondAttribute="centerX" id="TeW-H7-amV"/>
+                                        <constraint firstItem="s5h-kH-XHc" firstAttribute="top" secondItem="OIc-yT-lc0" secondAttribute="top" constant="20.5" id="cR6-lD-gDd"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" translatesAutoresizingMaskIntoConstraints="NO" id="8Uj-V0-n7s">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="personCell" rowHeight="200" id="BPB-lA-Kc6" customClass="PersonTableViewCell" customModule="AllAbout" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="addCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Uj-V0-n7s" id="lyl-Kw-8SE" customClass="AddTableViewCell" customModule="AllAbout" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BPB-lA-Kc6" id="Gw7-XQ-PHV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOf-Kr-R2S">
-                                                    <rect key="frame" x="231.5" y="0.0" width="100" height="100"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MHc-Gd-agb">
+                                                    <rect key="frame" x="112.5" y="5" width="150" height="190"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="30E-gb-cqx"/>
-                                                        <constraint firstAttribute="height" constant="100" id="O7w-HA-hhd"/>
+                                                        <constraint firstAttribute="width" constant="150" id="gl6-GY-gCZ"/>
+                                                        <constraint firstAttribute="height" constant="150" id="yzy-hH-7pU"/>
                                                     </constraints>
-                                                    <color key="tintColor" name="MyPink"/>
-                                                    <state key="normal" image="addPhoto"/>
-                                                    <connections>
-                                                        <segue destination="V6T-dd-EHa" kind="presentation" modalPresentationStyle="fullScreen" id="Fon-vo-7Sx"/>
-                                                    </connections>
-                                                </button>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRL-fY-2WC">
+                                                    <rect key="frame" x="112.5" y="-5" width="150" height="150"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="150" id="Gtp-kT-EQg"/>
+                                                        <constraint firstAttribute="width" constant="150" id="twP-1h-8WY"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="100"/>
+                                                    <color key="textColor" name="MyPink"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ерафима" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3S8-L3-yi0">
+                                                    <rect key="frame" x="112.5" y="116" width="150" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="oAR-XU-Hir"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="30"/>
+                                                    <color key="textColor" name="MyPink"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
-                                            <color key="backgroundColor" name="MyDarkGreen"/>
                                             <constraints>
-                                                <constraint firstItem="SOf-Kr-R2S" firstAttribute="centerY" secondItem="lyl-Kw-8SE" secondAttribute="centerY" id="pgI-Y4-fMj"/>
-                                                <constraint firstItem="SOf-Kr-R2S" firstAttribute="centerX" secondItem="lyl-Kw-8SE" secondAttribute="centerX" multiplier="1.5" id="rKQ-rw-uu8"/>
+                                                <constraint firstItem="MHc-Gd-agb" firstAttribute="top" secondItem="Gw7-XQ-PHV" secondAttribute="top" constant="5" id="3xN-ZA-uIE"/>
+                                                <constraint firstAttribute="bottom" secondItem="MHc-Gd-agb" secondAttribute="bottom" constant="5" id="87f-Tn-Vut"/>
+                                                <constraint firstItem="IRL-fY-2WC" firstAttribute="centerX" secondItem="Gw7-XQ-PHV" secondAttribute="centerX" id="A6S-oI-RH6"/>
+                                                <constraint firstItem="IRL-fY-2WC" firstAttribute="centerY" secondItem="Gw7-XQ-PHV" secondAttribute="centerY" multiplier="0.7" id="qyw-90-aI3"/>
+                                                <constraint firstItem="3S8-L3-yi0" firstAttribute="centerY" secondItem="Gw7-XQ-PHV" secondAttribute="centerY" multiplier="1.4" id="t2S-Rb-8VE"/>
+                                                <constraint firstItem="3S8-L3-yi0" firstAttribute="centerX" secondItem="Gw7-XQ-PHV" secondAttribute="centerX" id="tg1-yB-MF8"/>
+                                                <constraint firstItem="MHc-Gd-agb" firstAttribute="centerY" secondItem="Gw7-XQ-PHV" secondAttribute="centerY" id="wmb-XI-fJJ"/>
+                                                <constraint firstItem="MHc-Gd-agb" firstAttribute="centerX" secondItem="Gw7-XQ-PHV" secondAttribute="centerX" id="yBj-1S-r6J"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="MyDarkGreen"/>
+                                        <connections>
+                                            <outlet property="firstLetterLabel" destination="IRL-fY-2WC" id="MVx-nL-zYC"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -122,11 +168,11 @@
             <objects>
                 <viewController id="V6T-dd-EHa" customClass="AddViewController" customModule="AllAbout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gr8-vz-0XZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="0RC-6b-UWc">
-                                <rect key="frame" x="107" y="383.5" width="161" height="147.5"/>
+                                <rect key="frame" x="107" y="376.5" width="161" height="147.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите имя" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eMs-3p-1hV">
                                         <rect key="frame" x="0.0" y="0.0" width="161" height="46.5"/>
@@ -140,18 +186,21 @@
                                         <state key="normal" title="Принять">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveName:" destination="V6T-dd-EHa" eventType="touchUpInside" id="u3x-2e-4iQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="6wM-Nj-D3J">
-                                <rect key="frame" x="87.5" y="133.5" width="200" height="200"/>
+                                <rect key="frame" x="87.5" y="126.5" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="0rj-VQ-eA1"/>
                                     <constraint firstAttribute="height" constant="200" id="853-nJ-ioa"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2j-mw-swc">
-                                <rect key="frame" x="87.5" y="133.5" width="200" height="200"/>
+                                <rect key="frame" x="87.5" y="126.5" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="2kj-jx-fo8"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Ogs-q9-abX"/>
@@ -176,6 +225,7 @@
                         <viewLayoutGuide key="safeArea" id="fPx-dF-ArN"/>
                     </view>
                     <connections>
+                        <outlet property="nameTextField" destination="eMs-3p-1hV" id="qBH-bS-rmi"/>
                         <outlet property="photoPlace" destination="6wM-Nj-D3J" id="93h-7N-Ef8"/>
                     </connections>
                 </viewController>

@@ -9,18 +9,29 @@
 import UIKit
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-	
-    override func viewDidLoad() {
+
+	override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-
+	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 1
+		let name = UserDefaults.standard.string(forKey: "name")
+		if  name != nil {
+			return 1
+		} else {
+			return 0
+		}
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-		return cell
+		let name = UserDefaults.standard.string(forKey: "name")
+		if let name = name,
+			let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as? PersonTableViewCell, let oneLetter = name.first {
+			cell.firstLetterLabel.text = String(oneLetter)
+			return cell
+		} else {
+			return UITableViewCell()
+		}
 	}
 }
