@@ -80,7 +80,7 @@
                                             </constraints>
                                             <state key="normal" image="addPhoto"/>
                                             <connections>
-                                                <segue destination="V6T-dd-EHa" kind="presentation" modalPresentationStyle="fullScreen" id="ocA-aC-2Ol"/>
+                                                <segue destination="V6T-dd-EHa" kind="show" id="ocA-aC-2Ol"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -99,12 +99,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRL-fY-2WC">
-                                                    <rect key="frame" x="112.5" y="-5" width="150" height="150"/>
+                                                    <rect key="frame" x="170" y="-5" width="35.5" height="150"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="150" id="Gtp-kT-EQg"/>
-                                                        <constraint firstAttribute="width" constant="150" id="twP-1h-8WY"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="100"/>
+                                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="50"/>
                                                     <color key="textColor" name="MyPink"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -135,6 +134,9 @@
                         <viewLayoutGuide key="safeArea" id="EIK-fw-BuF"/>
                     </view>
                     <navigationItem key="navigationItem" id="gYz-pm-xDN"/>
+                    <connections>
+                        <outlet property="table" destination="TUe-9k-5Zb" id="4DZ-ep-951"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oYy-9K-vE7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -201,6 +203,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fPx-dF-ArN"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vNm-Qs-G4M"/>
                     <connections>
                         <outlet property="nameTextField" destination="eMs-3p-1hV" id="qBH-bS-rmi"/>
                         <outlet property="photoPlace" destination="6wM-Nj-D3J" id="93h-7N-Ef8"/>
