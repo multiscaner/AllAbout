@@ -36,8 +36,12 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
 		dismiss(animated: true, completion: nil)
 	}
 	@IBAction func saveName(_ sender: UIButton) {
-		if nameTextField.text != nil {
-			UserDefaults.standard.set(nameTextField.text, forKey: "name")
-		}
+		var personArray = UserDefaults.standard.stringArray(forKey: "personArray") ?? []
+		personArray.append(nameTextField.text!)
+		UserDefaults.standard.set(personArray, forKey: "personArray")
+		let personArrayget: [String] = UserDefaults.standard.stringArray(forKey: "personArray") ?? []
+		print(personArrayget)
+		navigationController?.popViewController(animated: true)
+		dismiss(animated: false, completion: nil)
 	}
 }

@@ -9,29 +9,27 @@
 import UIKit
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+	
 	override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
+		super.viewDidLoad()
+		
+	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		let name = UserDefaults.standard.string(forKey: "name")
-		if  name != nil {
-			return 1
-		} else {
+		let personArray: [String] = UserDefaults.standard.stringArray(forKey: "personArray") ?? []
+		if  personArray.isEmpty {
 			return 0
+		} else {
+			return personArray.count
 		}
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let name = UserDefaults.standard.string(forKey: "name")
-		if let name = name,
-			let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as? PersonTableViewCell, let oneLetter = name.first {
-			cell.firstLetterLabel.text = String(oneLetter)
-			return cell
-		} else {
-			return UITableViewCell()
-		}
+		let personArray = UserDefaults.standard.stringArray(forKey: "personArray")
+		let name = personArray![indexPath.row]
+		let firstLetter = name.first
+		let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as? PersonTableViewCell
+		cell?.firstLetterLabel.text = String(firstLetter!)
+		return cell!
 	}
 }
