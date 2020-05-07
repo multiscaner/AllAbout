@@ -10,6 +10,8 @@ import UIKit
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
+	let personHelper = PersonHelper()
+	
 	@IBOutlet weak var table: UITableView!
 	
 	override func viewDidLoad() {
@@ -25,21 +27,15 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		let personArray: [String] = UserDefaults.standard.stringArray(forKey: "personArray") ?? []
-		if  personArray.isEmpty {
-			return 0
-		} else {
-			return personArray.count
-		}
+		let result = personHelper.readPersons()
+		return result.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		if let personArray = UserDefaults.standard.stringArray(forKey: "personArray") {
-			let name = personArray[indexPath.row]
-			if let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as? PersonTableViewCell {
-				cell.firstLetterLabel.text = String(name)
-				return cell
-			}
+		let result = personHelper.readPersons()
+		if let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as? PersonTableViewCell {
+			cell.firstLetterLabel.text = result[indexPath.row].name
+			return cell
 		}
 		return UITableViewCell()
 	}

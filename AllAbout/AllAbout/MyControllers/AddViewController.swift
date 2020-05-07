@@ -10,6 +10,8 @@ import UIKit
 
 class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 	
+	let personHelper = PersonHelper()
+	
 	@IBOutlet weak var photoPlace: UIImageView!
 	
 	@IBOutlet weak var nameTextField: UITextField!
@@ -43,12 +45,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
 			self.present(alert, animated: true, completion: nil)
 			return
 		}
-		
-		var personArray = UserDefaults.standard.stringArray(forKey: "personArray") ?? []
-		personArray.append(personName)
-		UserDefaults.standard.set(personArray, forKey: "personArray")
-		let personArrayget: [String] = UserDefaults.standard.stringArray(forKey: "personArray") ?? []
-		print(personArrayget)
+		personHelper.savePerson(person: Person(name: personName))
 		navigationController?.popViewController(animated: false)
 	}
 }
