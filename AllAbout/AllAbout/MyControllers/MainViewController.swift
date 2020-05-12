@@ -32,9 +32,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let result = personHelper.readPersons()
+		let persons = personHelper.readPersons()
 		if let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as? PersonTableViewCell {
-			cell.firstLetterLabel.text = result[indexPath.row].name
+			cell.firstLetterLabel.text = persons[indexPath.row].name
 			return cell
 		}
 		return UITableViewCell()

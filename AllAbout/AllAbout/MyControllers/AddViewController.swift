@@ -38,7 +38,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
 		dismiss(animated: true, completion: nil)
 	}
 	
-	@IBAction func saveName(_ sender: UIButton) {
+	@IBAction func savePerson(_ sender: UIButton) {
 		guard let personName = nameTextField.text, !personName.isEmpty else {
 			let alert = UIAlertController(title: "Введите", message: "Имя", preferredStyle: UIAlertController.Style.alert)
 			alert.addAction(UIAlertAction(title: "ОК", style: UIAlertAction.Style.default, handler: nil))

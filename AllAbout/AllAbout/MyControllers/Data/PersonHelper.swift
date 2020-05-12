@@ -19,8 +19,8 @@ class PersonHelper {
 	}
 	
 	func savePerson(person: Person) {
-		var result = readPersons()
-		result.append(person)
-		UserDefaults.standard.set(try? PropertyListEncoder().encode(result), forKey: "persons")
+		var persons = readPersons()
+		persons.append(person)
+		UserDefaults.standard.set(try? PropertyListEncoder().encode(persons), forKey: "persons")
 	}
 }
