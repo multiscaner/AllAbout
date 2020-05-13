@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		934FA3BC245C8E3D00492A89 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934FA3BB245C8E3D00492A89 /* AddViewController.swift */; };
 		934FA3BE245EE7E200492A89 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934FA3BD245EE7E100492A89 /* PersonTableViewCell.swift */; };
 		93596BB72463FD5900BEB8FE /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93596BB62463FD5900BEB8FE /* Person.swift */; };
+		93B2A7FB246BB90A00155E3D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B2A7FA246BB90A00155E3D /* RegistrationViewController.swift */; };
 		93F71092241A350300A74824 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F71091241A350300A74824 /* AppDelegate.swift */; };
 		93F71094241A350300A74824 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F71093241A350300A74824 /* SceneDelegate.swift */; };
 		93F71096241A350300A74824 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F71095241A350300A74824 /* LoginController.swift */; };
@@ -33,6 +34,7 @@
 		934FA3BB245C8E3D00492A89 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		934FA3BD245EE7E100492A89 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		93596BB62463FD5900BEB8FE /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		93B2A7FA246BB90A00155E3D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		93F7108E241A350300A74824 /* AllAbout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllAbout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F71091241A350300A74824 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93F71093241A350300A74824 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				93F71097241A350300A74824 /* Main.storyboard */,
+				93B2A7FA246BB90A00155E3D /* RegistrationViewController.swift */,
 				934FA3B6245B082E00492A89 /* MyControllers */,
 				934FA3B5245AF35800492A89 /* System */,
 				93F7109A241A350400A74824 /* Assets.xcassets */,
@@ -293,6 +296,7 @@
 				93F71096241A350300A74824 /* LoginController.swift in Sources */,
 				934FA3BC245C8E3D00492A89 /* AddViewController.swift in Sources */,
 				93F71092241A350300A74824 /* AppDelegate.swift in Sources */,
+				93B2A7FB246BB90A00155E3D /* RegistrationViewController.swift in Sources */,
 				93F71094241A350300A74824 /* SceneDelegate.swift in Sources */,
 				934FA3BE245EE7E200492A89 /* PersonTableViewCell.swift in Sources */,
 				933E746A24647F6E00D4424D /* PersonHelper.swift in Sources */,

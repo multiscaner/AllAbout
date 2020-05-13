@@ -1,24 +1,28 @@
 //
-//  ViewController.swift
+//  RegistrationViewController.swift
 //  AllAbout
 //
-//  Created by UjiN on 3/12/20.
+//  Created by UjiN on 5/13/20.
 //  Copyright © 2020 UjiN. All rights reserved.
 //
 
 import UIKit
 
-class LoginController: UIViewController {
-
-	@IBOutlet weak var loginTextField: UITextField!
+class RegistrationViewController: UIViewController {
+	@IBOutlet weak var eMailTextField: UITextField!
 	@IBOutlet weak var passwordTextField: UITextField!
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
 		
-		createLine(textField: loginTextField)
+		createLine(textField: eMailTextField)
 		createLine(textField: passwordTextField)
+
     }
+	
+	@IBAction func signUp(_ sender: UIButton) {
+		
+	}
 	
 	func createLine(textField: UITextField) {
 		let bottomLine = CALayer()
