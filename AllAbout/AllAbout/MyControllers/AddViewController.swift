@@ -10,6 +10,8 @@ import UIKit
 
 class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 	
+	var dataImage: UIImage?
+	
 	let personHelper = PersonHelper()
 	
 	@IBOutlet weak var photoPlace: UIImageView!
@@ -33,6 +35,8 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
 		if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
 			photoPlace.contentMode = .scaleAspectFill
 			photoPlace.image = pickedImage
+			let imageData = pickedImage.pngData()
+			dataImage = UIImage(data: imageData!)
 		}
 		
 		dismiss(animated: true, completion: nil)
@@ -45,7 +49,13 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
 			self.present(alert, animated: true, completion: nil)
 			return
 		}
-		personHelper.savePerson(person: Person(name: personName))
-		navigationController?.popViewController(animated: false)
-	}
+		if let profileImage = dataImage {
+			let imageData = profileImage.pngData()
+			personHelper.savePerson(person: Person(name: personName, imageData: imageData))
+			navigationController?.popViewController(animated: false)
+		} else {
+				personHelper.savePerson(person: Person(name: personName, imageData: nil))
+				navigationController?.popViewController(animated: false)
+			}
+		}
 }

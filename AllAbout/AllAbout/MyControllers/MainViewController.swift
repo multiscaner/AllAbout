@@ -33,8 +33,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let persons = personHelper.readPersons()
-		if let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as? PersonTableViewCell {
-			cell.firstLetterLabel.text = persons[indexPath.row].name
+		let person = persons[indexPath.row]
+		if let imageData = person.imageData,
+			let cell = tableView.dequeueReusableCell(withIdentifier: "personImageCell", for: indexPath) as? PersonImageViewCell {
+			cell.personImage.image = UIImage(data: imageData)
+			return cell
+		} else if let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as? PersonTableViewCell {
+			cell.firstLetterLabel.text = person.name
 			return cell
 		}
 		return UITableViewCell()

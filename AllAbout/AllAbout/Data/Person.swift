@@ -10,5 +10,6 @@ import Foundation
 import UIKit
 
 struct Person: Codable {
-	var name: String
+	let name: String
+	let imageData: Data?
 }

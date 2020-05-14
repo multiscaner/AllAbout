@@ -10,13 +10,13 @@ import UIKit
 
 class LoginController: UIViewController {
 
-	@IBOutlet weak var loginTextField: UITextField!
+	@IBOutlet weak var eMailTextField: UITextField!
 	@IBOutlet weak var passwordTextField: UITextField!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		createLine(textField: loginTextField)
+		createLine(textField: eMailTextField)
 		createLine(textField: passwordTextField)
     }
 	
