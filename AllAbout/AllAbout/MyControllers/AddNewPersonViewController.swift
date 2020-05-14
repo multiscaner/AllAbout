@@ -8,35 +8,34 @@
 
 import UIKit
 
-class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddNewPersonViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 	
-	var dataImage: UIImage?
+	var personImage: UIImage?
 	
 	let personHelper = PersonHelper()
 	
-	@IBOutlet weak var photoPlace: UIImageView!
+	@IBOutlet weak var photoImageView: UIImageView!
 	
 	@IBOutlet weak var nameTextField: UITextField!
 	
-	let imagePicker = UIImagePickerController()
+	let imagePickerController = UIImagePickerController()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		imagePicker.delegate = self
+		imagePickerController.delegate = self
 		
 	}
 	@IBAction func choosePhoto(_ sender: UIButton) {
-		imagePicker.allowsEditing = false
-		imagePicker.sourceType = .photoLibrary
-		present(imagePicker, animated: true, completion: nil)
+		imagePickerController.allowsEditing = false
+		imagePickerController.sourceType = .photoLibrary
+		present(imagePickerController, animated: true, completion: nil)
 	}
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
 		if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-			photoPlace.contentMode = .scaleAspectFill
-			photoPlace.image = pickedImage
-			let imageData = pickedImage.pngData()
-			dataImage = UIImage(data: imageData!)
+			photoImageView.contentMode = .scaleAspectFill
+			photoImageView.image = pickedImage
+			personImage = pickedImage
 		}
 		
 		dismiss(animated: true, completion: nil)
@@ -49,13 +48,9 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
 			self.present(alert, animated: true, completion: nil)
 			return
 		}
-		if let profileImage = dataImage {
-			let imageData = profileImage.pngData()
-			personHelper.savePerson(person: Person(name: personName, imageData: imageData))
-			navigationController?.popViewController(animated: false)
-		} else {
-				personHelper.savePerson(person: Person(name: personName, imageData: nil))
-				navigationController?.popViewController(animated: false)
-			}
-		}
+		personHelper.savePerson(person: Person(name: personName, image: personImage))
+		navigationController?.popViewController(animated: false)
+		
+	}
+
 }

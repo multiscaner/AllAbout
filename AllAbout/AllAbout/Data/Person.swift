@@ -11,5 +11,17 @@ import UIKit
 
 struct Person: Codable {
 	let name: String
-	let imageData: Data?
+	private let imageData: Data?
+	var image: UIImage? {
+		if let data = imageData {
+			return UIImage(data: data)
+		}
+		return nil
+	}
+	
+	init(name: String, image: UIImage?) {
+		self.name = name
+		let imageData = image?.pngData()
+		self.imageData = imageData
+	}
 }

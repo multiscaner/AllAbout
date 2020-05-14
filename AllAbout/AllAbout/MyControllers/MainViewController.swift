@@ -23,7 +23,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 200.0;//Choose your custom row height
+	return 200.0;//Choose your custom row height
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,12 +34,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let persons = personHelper.readPersons()
 		let person = persons[indexPath.row]
-		if let imageData = person.imageData,
+		if let image = person.image,
 			let cell = tableView.dequeueReusableCell(withIdentifier: "personImageCell", for: indexPath) as? PersonImageViewCell {
-			cell.personImage.image = UIImage(data: imageData)
+			cell.personImage.image = image
 			return cell
-		} else if let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as? PersonTableViewCell {
-			cell.firstLetterLabel.text = person.name
+		} else if let cell = tableView.dequeueReusableCell(withIdentifier: "personLabelCell", for: indexPath) as? LabelTableViewCell {
+			cell.nameLabel.text = person.name
 			return cell
 		}
 		return UITableViewCell()
