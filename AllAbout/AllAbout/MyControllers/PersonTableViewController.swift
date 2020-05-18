@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PersonTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
 	let personHelper = PersonHelper()
 	

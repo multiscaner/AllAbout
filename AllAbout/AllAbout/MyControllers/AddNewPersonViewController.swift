@@ -49,8 +49,8 @@ class AddNewPersonViewController: UIViewController, UIImagePickerControllerDeleg
 			return
 		}
 		personHelper.savePerson(person: Person(name: personName, image: personImage))
-		navigationController?.popViewController(animated: false)
-		
+		self.navigationController?.popViewController(animated: true)
+		self.dismiss(animated: true, completion: nil)
 	}
 
 }

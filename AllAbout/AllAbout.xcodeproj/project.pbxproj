@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9303109C24697CFC00B7E375 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9303109B24697CFC00B7E375 /* GoogleService-Info.plist */; };
+		932DEF4D2470451F001645EF /* StyleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932DEF4C2470451F001645EF /* StyleHelper.swift */; };
 		933E746A24647F6E00D4424D /* PersonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933E746924647F6E00D4424D /* PersonHelper.swift */; };
-		934FA3B8245C172700492A89 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934FA3B7245C172700492A89 /* MainViewController.swift */; };
+		934FA3B8245C172700492A89 /* PersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934FA3B7245C172700492A89 /* PersonTableViewController.swift */; };
 		934FA3BA245C8DA800492A89 /* AddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934FA3B9245C8DA800492A89 /* AddTableViewCell.swift */; };
 		934FA3BC245C8E3D00492A89 /* AddNewPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934FA3BB245C8E3D00492A89 /* AddNewPersonViewController.swift */; };
-		934FA3BE245EE7E200492A89 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934FA3BD245EE7E100492A89 /* PersonTableViewCell.swift */; };
 		93596BB72463FD5900BEB8FE /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93596BB62463FD5900BEB8FE /* Person.swift */; };
 		93B2A7FB246BB90A00155E3D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B2A7FA246BB90A00155E3D /* RegistrationViewController.swift */; };
 		93B2A7FE246C30A100155E3D /* PersonImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B2A7FD246C30A100155E3D /* PersonImageViewCell.swift */; };
@@ -30,11 +30,11 @@
 		0D267FA5262D466BDDF40D7E /* Pods_AllAbout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllAbout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		514CEB29BFC0385A292D01E7 /* Pods-AllAbout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllAbout.release.xcconfig"; path = "Target Support Files/Pods-AllAbout/Pods-AllAbout.release.xcconfig"; sourceTree = "<group>"; };
 		9303109B24697CFC00B7E375 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		932DEF4C2470451F001645EF /* StyleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleHelper.swift; sourceTree = "<group>"; };
 		933E746924647F6E00D4424D /* PersonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonHelper.swift; sourceTree = "<group>"; };
-		934FA3B7245C172700492A89 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		934FA3B7245C172700492A89 /* PersonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewController.swift; sourceTree = "<group>"; };
 		934FA3B9245C8DA800492A89 /* AddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableViewCell.swift; sourceTree = "<group>"; };
 		934FA3BB245C8E3D00492A89 /* AddNewPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPersonViewController.swift; sourceTree = "<group>"; };
-		934FA3BD245EE7E100492A89 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		93596BB62463FD5900BEB8FE /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		93B2A7FA246BB90A00155E3D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		93B2A7FD246C30A100155E3D /* PersonImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonImageViewCell.swift; sourceTree = "<group>"; };
@@ -74,9 +74,9 @@
 		934FA3B5245AF35800492A89 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				93F71091241A350300A74824 /* AppDelegate.swift */,
 				93F7109C241A350400A74824 /* LaunchScreen.storyboard */,
 				93F71093241A350300A74824 /* SceneDelegate.swift */,
-				93F71091241A350300A74824 /* AppDelegate.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -84,13 +84,14 @@
 		934FA3B6245B082E00492A89 /* MyControllers */ = {
 			isa = PBXGroup;
 			children = (
-				934FA3B7245C172700492A89 /* MainViewController.swift */,
-				934FA3B9245C8DA800492A89 /* AddTableViewCell.swift */,
-				934FA3BD245EE7E100492A89 /* PersonTableViewCell.swift */,
-				93B2A7FD246C30A100155E3D /* PersonImageViewCell.swift */,
-				93F71095241A350300A74824 /* LoginController.swift */,
-				934FA3BB245C8E3D00492A89 /* AddNewPersonViewController.swift */,
 				93B2A7FA246BB90A00155E3D /* RegistrationViewController.swift */,
+				93F71095241A350300A74824 /* LoginController.swift */,
+				934FA3B7245C172700492A89 /* PersonTableViewController.swift */,
+				934FA3B9245C8DA800492A89 /* AddTableViewCell.swift */,
+				93B2A7FF246DCFF600155E3D /* LabelTableViewCell.swift */,
+				93B2A7FD246C30A100155E3D /* PersonImageViewCell.swift */,
+				934FA3BB245C8E3D00492A89 /* AddNewPersonViewController.swift */,
+				932DEF4C2470451F001645EF /* StyleHelper.swift */,
 			);
 			path = MyControllers;
 			sourceTree = "<group>";
@@ -125,11 +126,10 @@
 		93F71090241A350300A74824 /* AllAbout */ = {
 			isa = PBXGroup;
 			children = (
-				934FA3B5245AF35800492A89 /* System */,
 				93F71097241A350300A74824 /* Main.storyboard */,
-				93B2A7FF246DCFF600155E3D /* LabelTableViewCell.swift */,
 				934FA3B6245B082E00492A89 /* MyControllers */,
 				93596BB82464022B00BEB8FE /* Data */,
+				934FA3B5245AF35800492A89 /* System */,
 				93F7109A241A350400A74824 /* Assets.xcassets */,
 				93F7109F241A350400A74824 /* Info.plist */,
 				9303109B24697CFC00B7E375 /* GoogleService-Info.plist */,
@@ -304,12 +304,12 @@
 				934FA3BC245C8E3D00492A89 /* AddNewPersonViewController.swift in Sources */,
 				93F71092241A350300A74824 /* AppDelegate.swift in Sources */,
 				93B2A7FB246BB90A00155E3D /* RegistrationViewController.swift in Sources */,
+				932DEF4D2470451F001645EF /* StyleHelper.swift in Sources */,
 				93F71094241A350300A74824 /* SceneDelegate.swift in Sources */,
-				934FA3BE245EE7E200492A89 /* PersonTableViewCell.swift in Sources */,
 				93B2A7FE246C30A100155E3D /* PersonImageViewCell.swift in Sources */,
 				933E746A24647F6E00D4424D /* PersonHelper.swift in Sources */,
 				93596BB72463FD5900BEB8FE /* Person.swift in Sources */,
-				934FA3B8245C172700492A89 /* MainViewController.swift in Sources */,
+				934FA3B8245C172700492A89 /* PersonTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
