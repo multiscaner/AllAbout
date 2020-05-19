@@ -13,7 +13,6 @@ class StyleHelper {
 	
 	static func isPasswordValid(pass: String) -> Bool {
 		let password = NSPredicate(format:
-//			"SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z]\\d$@$#!%*?&]{8,}"
 			"SELF MATCHES %@", "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}$")
 		return password.evaluate(with: pass)
 	}

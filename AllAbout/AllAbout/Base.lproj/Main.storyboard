@@ -19,16 +19,18 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="9xg-bP-6sO">
                                 <rect key="frame" x="40" y="142.5" width="295" height="374.5"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E - mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qbp-7h-0cR">
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="a@gmail.com" borderStyle="roundedRect" placeholder="E - mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qbp-7h-0cR">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="gQp-RU-qN1"/>
                                         </constraints>
+                                        <color key="textColor" name="MyGreen"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3EV-X1-JLa">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="aaaaa1" borderStyle="roundedRect" placeholder="Пароль" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3EV-X1-JLa">
                                         <rect key="frame" x="0.0" y="87" width="295" height="37"/>
+                                        <color key="textColor" name="MyGreen"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -126,9 +128,24 @@
                                     <constraint firstItem="BWg-ED-1fw" firstAttribute="width" secondItem="U28-bE-bhd" secondAttribute="width" id="dTn-e3-Wgg"/>
                                 </constraints>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jxH-5c-QcI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="6CQ-iV-oYr">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.left" catalog="system" id="wON-6I-ikw">
+                                            <connections>
+                                                <action selector="cancelSignUp:" destination="vYt-BK-s4i" id="zD6-fm-W6R"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="JYt-jb-kXu" firstAttribute="trailing" secondItem="jxH-5c-QcI" secondAttribute="trailing" id="5aX-aI-jGg"/>
+                            <constraint firstItem="jxH-5c-QcI" firstAttribute="top" secondItem="JYt-jb-kXu" secondAttribute="top" id="6TK-Fw-lBA"/>
+                            <constraint firstItem="jxH-5c-QcI" firstAttribute="leading" secondItem="JYt-jb-kXu" secondAttribute="leading" id="Mzx-E3-Ah2"/>
                             <constraint firstItem="JYt-jb-kXu" firstAttribute="bottom" secondItem="GXz-nR-11Q" secondAttribute="bottom" constant="190" id="eRz-6a-Oq5"/>
                             <constraint firstItem="GXz-nR-11Q" firstAttribute="leading" secondItem="JYt-jb-kXu" secondAttribute="leading" constant="40" id="p56-Rf-YUQ"/>
                             <constraint firstItem="JYt-jb-kXu" firstAttribute="trailing" secondItem="GXz-nR-11Q" secondAttribute="trailing" constant="40" id="xXt-6N-gzd"/>
@@ -144,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sid-MB-Uhw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="214" y="899"/>
+            <point key="canvasLocation" x="213.59999999999999" y="898.2008995502249"/>
         </scene>
         <!--Person Table View Controller-->
         <scene sceneID="r07-cu-zkb">
@@ -342,16 +359,31 @@
                                     <action selector="choosePhoto:" destination="V6T-dd-EHa" eventType="touchUpInside" id="gte-S4-GPv"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zAY-bu-7vg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="UOa-mN-PaO">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.left" catalog="system" id="28L-YX-Ugi">
+                                            <connections>
+                                                <action selector="cancelAddPerson:" destination="V6T-dd-EHa" id="IY7-NV-JtV"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" name="MyGreen"/>
                         <constraints>
+                            <constraint firstItem="zAY-bu-7vg" firstAttribute="top" secondItem="fPx-dF-ArN" secondAttribute="top" id="0iH-PP-fsC"/>
                             <constraint firstItem="6wM-Nj-D3J" firstAttribute="centerY" secondItem="Gr8-vz-0XZ" secondAttribute="centerY" multiplier="0.6" id="3pQ-7D-od7"/>
+                            <constraint firstItem="zAY-bu-7vg" firstAttribute="leading" secondItem="fPx-dF-ArN" secondAttribute="leading" id="Jhs-NN-dnJ"/>
                             <constraint firstItem="0RC-6b-UWc" firstAttribute="centerX" secondItem="Gr8-vz-0XZ" secondAttribute="centerX" id="OV5-Hi-BB5"/>
                             <constraint firstItem="0RC-6b-UWc" firstAttribute="top" secondItem="6wM-Nj-D3J" secondAttribute="bottom" constant="5" id="TNY-lP-PdC"/>
                             <constraint firstItem="s2j-mw-swc" firstAttribute="centerY" secondItem="Gr8-vz-0XZ" secondAttribute="centerY" multiplier="0.6" id="W0p-7S-cPr"/>
                             <constraint firstItem="s2j-mw-swc" firstAttribute="centerX" secondItem="Gr8-vz-0XZ" secondAttribute="centerX" id="bmd-D5-EeQ"/>
                             <constraint firstItem="6wM-Nj-D3J" firstAttribute="centerX" secondItem="Gr8-vz-0XZ" secondAttribute="centerX" id="ehs-PO-BO7"/>
+                            <constraint firstItem="fPx-dF-ArN" firstAttribute="trailing" secondItem="zAY-bu-7vg" secondAttribute="trailing" id="zqV-qw-xeU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fPx-dF-ArN"/>
                     </view>
@@ -363,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHk-Ip-64E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2409" y="124"/>
+            <point key="canvasLocation" x="2408.8000000000002" y="123.68815592203899"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iGs-X9-Hku">
@@ -388,6 +420,7 @@
     <color key="tintColor" name="MyGreen"/>
     <resources>
         <image name="addPhoto" width="256" height="256"/>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
         <namedColor name="MyDarkGreen">
             <color red="0.44313725490196076" green="0.61960784313725492" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

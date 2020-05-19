@@ -47,6 +47,9 @@ class RegistrationViewController: UIViewController {
 		
 		return nil
 	}
+	@IBAction func cancelSignUp(_ sender: UIBarButtonItem) {
+		self.dismiss(animated: true, completion: nil)
+	}
 	
 	@IBAction func signUp(_ sender: UIButton) {
 		

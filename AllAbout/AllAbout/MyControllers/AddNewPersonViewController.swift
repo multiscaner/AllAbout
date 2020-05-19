@@ -40,6 +40,9 @@ class AddNewPersonViewController: UIViewController, UIImagePickerControllerDeleg
 		
 		dismiss(animated: true, completion: nil)
 	}
+	@IBAction func cancelAddPerson(_ sender: UIBarButtonItem) {
+		self.dismiss(animated: true, completion: nil)
+	}
 	
 	@IBAction func savePerson(_ sender: UIButton) {
 		guard let personName = nameTextField.text, !personName.isEmpty else {
