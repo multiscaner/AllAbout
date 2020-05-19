@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class AddNewPersonViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+	
+	var ref: DatabaseReference?
 	
 	var personImage: UIImage?
 	
