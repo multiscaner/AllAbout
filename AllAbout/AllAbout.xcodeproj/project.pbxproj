@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9303109C24697CFC00B7E375 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9303109B24697CFC00B7E375 /* GoogleService-Info.plist */; };
 		932DEF4D2470451F001645EF /* StyleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932DEF4C2470451F001645EF /* StyleHelper.swift */; };
 		933E746A24647F6E00D4424D /* PersonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933E746924647F6E00D4424D /* PersonHelper.swift */; };
 		934FA3B8245C172700492A89 /* PersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934FA3B7245C172700492A89 /* PersonTableViewController.swift */; };
-		934FA3BA245C8DA800492A89 /* AddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934FA3B9245C8DA800492A89 /* AddTableViewCell.swift */; };
 		934FA3BC245C8E3D00492A89 /* AddNewPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934FA3BB245C8E3D00492A89 /* AddNewPersonViewController.swift */; };
 		93596BB72463FD5900BEB8FE /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93596BB62463FD5900BEB8FE /* Person.swift */; };
+		93AB3088247695D700A25402 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93AB3087247695D600A25402 /* GoogleService-Info.plist */; };
 		93B2A7FB246BB90A00155E3D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B2A7FA246BB90A00155E3D /* RegistrationViewController.swift */; };
 		93B2A7FE246C30A100155E3D /* PersonImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B2A7FD246C30A100155E3D /* PersonImageViewCell.swift */; };
 		93B2A800246DCFF600155E3D /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B2A7FF246DCFF600155E3D /* LabelTableViewCell.swift */; };
@@ -29,13 +28,12 @@
 /* Begin PBXFileReference section */
 		063C9F11756FBE41D6C84B9B /* Pods_AllAbout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllAbout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8538336B0551273A5B253BF1 /* Pods-AllAbout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllAbout.debug.xcconfig"; path = "Target Support Files/Pods-AllAbout/Pods-AllAbout.debug.xcconfig"; sourceTree = "<group>"; };
-		9303109B24697CFC00B7E375 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		932DEF4C2470451F001645EF /* StyleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleHelper.swift; sourceTree = "<group>"; };
 		933E746924647F6E00D4424D /* PersonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonHelper.swift; sourceTree = "<group>"; };
 		934FA3B7245C172700492A89 /* PersonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewController.swift; sourceTree = "<group>"; };
-		934FA3B9245C8DA800492A89 /* AddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableViewCell.swift; sourceTree = "<group>"; };
 		934FA3BB245C8E3D00492A89 /* AddNewPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPersonViewController.swift; sourceTree = "<group>"; };
 		93596BB62463FD5900BEB8FE /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		93AB3087247695D600A25402 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		93B2A7FA246BB90A00155E3D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		93B2A7FD246C30A100155E3D /* PersonImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonImageViewCell.swift; sourceTree = "<group>"; };
 		93B2A7FF246DCFF600155E3D /* LabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
@@ -95,9 +93,6 @@
 				93B2A7FA246BB90A00155E3D /* RegistrationViewController.swift */,
 				93F71095241A350300A74824 /* LoginController.swift */,
 				934FA3B7245C172700492A89 /* PersonTableViewController.swift */,
-				934FA3B9245C8DA800492A89 /* AddTableViewCell.swift */,
-				93B2A7FF246DCFF600155E3D /* LabelTableViewCell.swift */,
-				93B2A7FD246C30A100155E3D /* PersonImageViewCell.swift */,
 				934FA3BB245C8E3D00492A89 /* AddNewPersonViewController.swift */,
 				932DEF4C2470451F001645EF /* StyleHelper.swift */,
 			);
@@ -111,6 +106,15 @@
 				933E746924647F6E00D4424D /* PersonHelper.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		93AB308924769B7D00A25402 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				93B2A7FD246C30A100155E3D /* PersonImageViewCell.swift */,
+				93B2A7FF246DCFF600155E3D /* LabelTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		93F71085241A350300A74824 = {
@@ -134,13 +138,14 @@
 		93F71090241A350300A74824 /* AllAbout */ = {
 			isa = PBXGroup;
 			children = (
+				93AB3087247695D600A25402 /* GoogleService-Info.plist */,
 				93F71097241A350300A74824 /* Main.storyboard */,
 				934FA3B6245B082E00492A89 /* MyControllers */,
+				93AB308924769B7D00A25402 /* Cells */,
 				93596BB82464022B00BEB8FE /* Data */,
 				934FA3B5245AF35800492A89 /* System */,
 				93F7109A241A350400A74824 /* Assets.xcassets */,
 				93F7109F241A350400A74824 /* Info.plist */,
-				9303109B24697CFC00B7E375 /* GoogleService-Info.plist */,
 			);
 			path = AllAbout;
 			sourceTree = "<group>";
@@ -208,7 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93F7109E241A350400A74824 /* LaunchScreen.storyboard in Resources */,
-				9303109C24697CFC00B7E375 /* GoogleService-Info.plist in Resources */,
+				93AB3088247695D700A25402 /* GoogleService-Info.plist in Resources */,
 				93F7109B241A350400A74824 /* Assets.xcassets in Resources */,
 				93F71099241A350300A74824 /* Main.storyboard in Resources */,
 			);
@@ -298,7 +303,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				934FA3BA245C8DA800492A89 /* AddTableViewCell.swift in Sources */,
 				93F71096241A350300A74824 /* LoginController.swift in Sources */,
 				93B2A800246DCFF600155E3D /* LabelTableViewCell.swift in Sources */,
 				934FA3BC245C8E3D00492A89 /* AddNewPersonViewController.swift in Sources */,

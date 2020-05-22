@@ -7,20 +7,29 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 class PersonHelper {
+	lazy var ref: DatabaseReference? = Database.database().reference()
 	
-	func readPersons() -> [Person] {
-		if let data = UserDefaults.standard.value(forKey: "persons") as? Data,
-			let personArray = try? PropertyListDecoder().decode(Array<Person>.self, from: data) {
-			return personArray
-		}
-		return []
+	func readPersons(successHandler: @escaping ([Person]) -> Void) {
+		ref?.child("persons").observeSingleEvent(of: .value, with: { (snapshot) in
+			
+			var persons: [Person] = []
+			for child in snapshot.children {
+				guard let snapshot = child as? DataSnapshot, let value = snapshot.value as? [String: Any] else { return }
+				guard let name = value["name"] as? String else { return }
+				
+				let person = Person(id: snapshot.key, name: name, image: nil)
+				persons.append(person)
+			}
+			
+			successHandler(persons)
+		})
+		
 	}
 	
 	func savePerson(person: Person) {
-		var persons = readPersons()
-		persons.append(person)
-		UserDefaults.standard.set(try? PropertyListEncoder().encode(persons), forKey: "persons")
+		self.ref?.child("persons").childByAutoId().setValue(["name": person.name])
 	}
 }

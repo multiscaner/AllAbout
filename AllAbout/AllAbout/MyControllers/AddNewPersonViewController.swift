@@ -7,12 +7,9 @@
 //
 
 import UIKit
-import FirebaseDatabase
 
 class AddNewPersonViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-	
-	var ref: DatabaseReference?
-	
+		
 	var personImage: UIImage?
 	
 	let personHelper = PersonHelper()
@@ -27,7 +24,6 @@ class AddNewPersonViewController: UIViewController, UIImagePickerControllerDeleg
 		super.viewDidLoad()
 		
 		imagePickerController.delegate = self
-		
 	}
 	@IBAction func choosePhoto(_ sender: UIButton) {
 		imagePickerController.allowsEditing = false
@@ -48,12 +44,14 @@ class AddNewPersonViewController: UIViewController, UIImagePickerControllerDeleg
 	}
 	
 	@IBAction func savePerson(_ sender: UIButton) {
+		
 		guard let personName = nameTextField.text, !personName.isEmpty else {
 			let alert = UIAlertController(title: "Введите", message: "Имя", preferredStyle: UIAlertController.Style.alert)
 			alert.addAction(UIAlertAction(title: "ОК", style: UIAlertAction.Style.default, handler: nil))
 			self.present(alert, animated: true, completion: nil)
 			return
 		}
+		
 		personHelper.savePerson(person: Person(name: personName, image: personImage))
 		self.navigationController?.popViewController(animated: true)
 		self.dismiss(animated: true, completion: nil)

@@ -9,13 +9,18 @@
 import UIKit
 
 class PersonTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-	
+	var persons: [Person]?
 	let personHelper = PersonHelper()
+	@IBOutlet weak var tableView: UITableView!
 	
 	@IBOutlet weak var table: UITableView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		personHelper.readPersons { (persons) in
+			self.persons = persons
+			self.tableView.reloadData()
+		}
 		
 	}
 	override func viewWillAppear(_ animated: Bool) {
@@ -23,17 +28,17 @@ class PersonTableViewController: UIViewController, UITableViewDelegate, UITableV
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-	return 200.0;//Choose your custom row height
+		return 200.0;//Choose your custom row height
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		let result = personHelper.readPersons()
-		return result.count
+		return persons?.count ?? 0
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let persons = personHelper.readPersons()
-		let person = persons[indexPath.row]
+		guard let person = persons?[indexPath.row] else {
+			return UITableViewCell()
+		}
 		if let image = person.image,
 			let cell = tableView.dequeueReusableCell(withIdentifier: "personImageCell", for: indexPath) as? PersonImageViewCell {
 			cell.personImage.image = image

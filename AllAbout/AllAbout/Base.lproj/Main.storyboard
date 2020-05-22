@@ -161,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sid-MB-Uhw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="213.59999999999999" y="898.2008995502249"/>
+            <point key="canvasLocation" x="214" y="868"/>
         </scene>
         <!--Person Table View Controller-->
         <scene sceneID="r07-cu-zkb">
@@ -298,6 +298,7 @@
                     <navigationItem key="navigationItem" id="gYz-pm-xDN"/>
                     <connections>
                         <outlet property="table" destination="TUe-9k-5Zb" id="4DZ-ep-951"/>
+                        <outlet property="tableView" destination="TUe-9k-5Zb" id="DTo-Gm-IgW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oYy-9K-vE7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -395,7 +396,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHk-Ip-64E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2408.8000000000002" y="123.68815592203899"/>
+            <point key="canvasLocation" x="2449" y="124"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iGs-X9-Hku">
@@ -414,7 +415,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5SE-K1-a5S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1006" y="124"/>
+            <point key="canvasLocation" x="953" y="124"/>
         </scene>
     </scenes>
     <color key="tintColor" name="MyGreen"/>

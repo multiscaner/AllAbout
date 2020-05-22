@@ -11,6 +11,7 @@ import UIKit
 
 struct Person: Codable {
 	let name: String
+	let id: String?
 	private let imageData: Data?
 	var image: UIImage? {
 		if let data = imageData {
@@ -19,9 +20,10 @@ struct Person: Codable {
 		return nil
 	}
 	
-	init(name: String, image: UIImage?) {
+	init(id: String? = nil, name: String, image: UIImage?) {
 		self.name = name
 		let imageData = image?.pngData()
 		self.imageData = imageData
+		self.id = id
 	}
 }
