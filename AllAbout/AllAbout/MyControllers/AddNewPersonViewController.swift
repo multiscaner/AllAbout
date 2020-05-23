@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class AddNewPersonViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-		
+	
+	let hud = JGProgressHUD(style: .dark)
+	
 	var personImage: UIImage?
 	
 	let personHelper = PersonHelper()
@@ -44,7 +47,6 @@ class AddNewPersonViewController: UIViewController, UIImagePickerControllerDeleg
 	}
 	
 	@IBAction func savePerson(_ sender: UIButton) {
-		
 		guard let personName = nameTextField.text, !personName.isEmpty else {
 			let alert = UIAlertController(title: "Введите", message: "Имя", preferredStyle: UIAlertController.Style.alert)
 			alert.addAction(UIAlertAction(title: "ОК", style: UIAlertAction.Style.default, handler: nil))
@@ -52,9 +54,11 @@ class AddNewPersonViewController: UIViewController, UIImagePickerControllerDeleg
 			return
 		}
 		
-		personHelper.savePerson(person: Person(name: personName, image: personImage), completion: { success, error in
+		let person = Person(name: personName, image: personImage)
+		hud.show(in: self.view)
+		personHelper.savePerson(person: person, completion: { success, error in
+			self.hud.dismiss()
 			if success {
-				self.navigationController?.popViewController(animated: true)
 				self.dismiss(animated: true, completion: nil)
 			} else if let error = error {
 				let alert = UIAlertController(title: "Ошибка", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
@@ -62,6 +66,7 @@ class AddNewPersonViewController: UIViewController, UIImagePickerControllerDeleg
 				self.present(alert, animated: true, completion: nil)
 			}
 		})
+		
 	}
 
 }

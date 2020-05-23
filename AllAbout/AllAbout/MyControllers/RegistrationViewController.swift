@@ -9,8 +9,11 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import JGProgressHUD
 
 class RegistrationViewController: UIViewController {
+	
+	let hud = JGProgressHUD(style: .dark)
 	
 	@IBOutlet weak var errorLabel: UILabel!
 	@IBOutlet weak var eMailTextField: UITextField!
@@ -47,6 +50,7 @@ class RegistrationViewController: UIViewController {
 		
 		return nil
 	}
+	
 	@IBAction func cancelSignUp(_ sender: UIBarButtonItem) {
 		self.dismiss(animated: true, completion: nil)
 	}
@@ -55,33 +59,25 @@ class RegistrationViewController: UIViewController {
 		
 		let error = validateFields()
 		
-		if error != nil {
-			
-			showError(error!)
+		if let error = error {
+			showError(error)
 		} else {
 			
 			let email = eMailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
 			let pass = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-			
-			Auth.auth().createUser(withEmail: email, password: pass) { (result, err) in
-				
-				if err != nil {
-					self.showError("Не могу создать юзера.")
+			hud.show(in: self.view)
+			Auth.auth().createUser(withEmail: email, password: pass) { (_, error) in
+				self.hud.dismiss()
+				if let error = error {
+					self.showError(error.localizedDescription)
 				} else {
-					let db = Firestore.firestore()
-					db.collection("users").addDocument(data: ["uid": result!.user.uid]) { (error) in
-						if error != nil {
-							self.showError("Попробуйте попозже.")
-						}
-					}
-					self.navigationController?.popViewController(animated: true)
 					self.dismiss(animated: true, completion: nil)
 				}
 			}
 		}
 	}
+	
 	func showError (_ message: String) {
-		
 		errorLabel.text = message
 		errorLabel.alpha = 1
 	}

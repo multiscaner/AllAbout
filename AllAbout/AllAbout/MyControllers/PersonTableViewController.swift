@@ -8,8 +8,11 @@
 
 import UIKit
 import AlamofireImage
+import JGProgressHUD
 
 class PersonTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+	
+	let hud = JGProgressHUD(style: .dark)
 	var persons: [Person]?
 	let personHelper = PersonHelper()
 	@IBOutlet weak var tableView: UITableView!
@@ -18,12 +21,21 @@ class PersonTableViewController: UIViewController, UITableViewDelegate, UITableV
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+		hud.show(in: self.view)
 	}
+	
 	override func viewWillAppear(_ animated: Bool) {
-		personHelper.readPersons { (persons) in
-			self.persons = persons
-			self.tableView.reloadData()
+		personHelper.readPersons { (persons, error) in
+			
+			if let error = error {
+				let alert = UIAlertController(title: "Ошибка", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+				alert.addAction(UIAlertAction(title: "ОК", style: UIAlertAction.Style.default, handler: nil))
+				self.present(alert, animated: true, completion: nil)
+			} else {
+				self.persons = persons
+				self.tableView.reloadData()
+			}
+			self.hud.dismiss()
 		}
 	}
 	

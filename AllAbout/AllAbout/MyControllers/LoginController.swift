@@ -8,8 +8,11 @@
 
 import UIKit
 import FirebaseAuth
+import JGProgressHUD
 
 class LoginController: UIViewController {
+	
+	let hud = JGProgressHUD(style: .dark)
 	
 	@IBOutlet weak var errorLabel: UILabel!
 	@IBOutlet weak var eMailTextField: UITextField!
@@ -23,7 +26,7 @@ class LoginController: UIViewController {
 		
 	}
 	@IBAction func toComeIn(_ sender: UIButton) {
-		
+
 		let error = validateFields()
 		
 		if error != nil {
@@ -33,14 +36,16 @@ class LoginController: UIViewController {
 			
 			let email = eMailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
 			let pass = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-			
+			hud.show(in: self.view)
 			Auth.auth().signIn(withEmail: email, password: pass) { (_, error) in
+				self.hud.dismiss()
 				if let error = error {
 					self.showError(error.localizedDescription)
 				} else {
 					self.performSegue(withIdentifier: "personTableSegue", sender: nil)
 				}
 			}
+			
 		}
 	}
 	func setUpElements() {

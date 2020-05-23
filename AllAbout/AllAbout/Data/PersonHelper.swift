@@ -7,14 +7,18 @@
 //
 
 import Foundation
-import FirebaseDatabase
 import FirebaseStorage
+import Firebase
+import FirebaseAuth
 
 class PersonHelper {
-	lazy var ref: DatabaseReference? = Database.database().reference()
-	
-	func upload(currentUserId: String, photo: UIImage, completion: @escaping (Result<URL, Error>) -> Void) {
-		let refer = Storage.storage().reference().child("avatars").child(currentUserId)
+	let firestore = Firestore.firestore()
+	var currentUserId: String? {
+		return Auth.auth().currentUser?.uid
+	}
+
+	func upload(name: String, photo: UIImage, completion: @escaping (URL?, Error?) -> Void) {
+		let refer = Storage.storage().reference().child("avatars").child(name)
 		
 		guard let imageData = photo.jpegData(compressionQuality: 0.4) else { return }
 		
@@ -23,49 +27,67 @@ class PersonHelper {
 		
 		refer.putData(imageData, metadata: metadata) { (metadata, error) in
 			guard metadata != nil else {
-				completion(.failure(error!))
+				completion(nil, error)
 				return
 			}
 			refer.downloadURL { (url, error) in
 				guard let url = url else {
-					completion(.failure(error!))
+					completion(nil, error)
 					return
 				}
-				completion(.success(url))
+				completion(url, nil)
 			}
 		}
 	}
 	
-	func readPersons(successHandler: @escaping ([Person]) -> Void) {
-		ref?.child("persons").observeSingleEvent(of: .value, with: { (snapshot) in
-			
-			var persons: [Person] = []
-			for child in snapshot.children {
-				guard let snapshot = child as? DataSnapshot, let value = snapshot.value as? [String: Any] else { continue }
-				guard let name = value["name"] as? String else { continue }
-				let imageUrlString = value["imageUrl"] as? String
-				let person = Person(id: snapshot.key, name: name, imageUrlString: imageUrlString)
-				persons.append(person)
+	func readPersons(completion: @escaping ([Person], Error?) -> Void) {
+		guard let currentUserId = currentUserId else {
+			completion([], nil)
+			return
+		}
+		
+		let userDocument = firestore.document("users/\(currentUserId)")
+		let personsCollection = userDocument.collection("persons")
+		personsCollection.getDocuments { (shapshot, error) in
+			if let error = error {
+				completion([], error)
+				return
 			}
 			
-			successHandler(persons)
-		})
-		
+			let persons = shapshot?.documents.map({ (document) -> Person in
+				let dictionary = document.data()
+				let name = dictionary["name"] as? String
+				let imageUrl = dictionary["imageUrl"] as? String
+				let person = Person(id: document.documentID, name: name ?? "", imageUrlString: imageUrl)
+				return person
+			})
+			
+			completion(persons ?? [], nil)
+		}
 	}
 	
 	func savePerson(person: Person, completion: @escaping (Bool, Error?) -> Void) {
-		guard let personRef = self.ref?.child("persons").childByAutoId(), let personId = personRef.key else { return }
-		personRef.setValue(["name": person.name])
+		guard let currentUserId = currentUserId else {
+			completion(false, nil)
+			return
+		}
+		
+		let userDocument = firestore.document("users/\(currentUserId)")
+		let personsCollection = userDocument.collection("persons")
+		let personDocument = personsCollection.addDocument(data: ["name": person.name])
+	
 		if let image = person.image {
-			upload(currentUserId: personId, photo: image) { (result) in
-				switch result {
-				case .success(let url):
-					personRef.setValue(["name": person.name, "imageUrl": url.absoluteString])
-					completion(true, nil)
-				case .failure(let error):
+			upload(name: personDocument.documentID, photo: image) { (url, error) in
+				guard let url = url else {
 					completion(false, error)
+					return
 				}
+
+				personDocument.setData(["imageUrl": url.absoluteString], merge: true)
+				completion(true, nil)
 			}
+		} else {
+			completion(true, nil)
 		}
 	}
 }
