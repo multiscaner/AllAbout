@@ -12,5 +12,6 @@ pod 'Firebase/Firestore','6.24.0'
 pod 'Firebase/Storage'
 pod 'AlamofireImage', '~> 4.1'
 pod 'JGProgressHUD'
+pod 'IQKeyboardManagerSwift'
 
 end
