@@ -14,15 +14,22 @@ struct Person {
 	var id: String?
 	var image: UIImage?
 	var imageUrlString: String?
+	var birthDate: Date?
 	
-	init(name: String, image: UIImage?) {
+	init(name: String, image: UIImage?, date: String) {
 		self.name = name
 		self.image = image
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "dd MMM yyyy"
+		birthDate = dateFormatter.date(from: date)
 	}
 
-	init(id: String? = nil, name: String, imageUrlString: String?) {
+	init(id: String? = nil, name: String, imageUrlString: String?, date: String) {
 		self.name = name
 		self.imageUrlString = imageUrlString
 		self.id = id
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "dd MMM yyyy"
+		birthDate = dateFormatter.date(from: date)
 	}
 }

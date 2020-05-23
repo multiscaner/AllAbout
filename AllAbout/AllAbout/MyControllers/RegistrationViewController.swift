@@ -21,33 +21,25 @@ class RegistrationViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
 		setUpElements()
-		
 	}
 	
 	func setUpElements() {
-		
 		StyleHelper.createLine(textField: eMailTextField)
 		StyleHelper.createLine(textField: passwordTextField)
 		errorLabel.alpha = 0
-		
 	}
 	
 	func validateFields() -> String? {
-		
 		if eMailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
 			passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-			
 			return "Заполните все поля"
 		}
 		
 		let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-		
-		if StyleHelper.isPasswordValid(pass: cleanedPassword) == false {
+		if Validator.isPasswordValid(pass: cleanedPassword) == false {
 			return "Пароль должен содержать буквы и цифры."
 		}
-		
 		return nil
 	}
 	
@@ -56,9 +48,7 @@ class RegistrationViewController: UIViewController {
 	}
 	
 	@IBAction func signUp(_ sender: UIButton) {
-		
 		let error = validateFields()
-		
 		if let error = error {
 			showError(error)
 		} else {

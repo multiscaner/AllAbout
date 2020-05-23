@@ -170,34 +170,12 @@
                     <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wxa-tQ-Wcf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TUe-9k-5Zb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TUe-9k-5Zb">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="separatorColor" name="MyGreen"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" name="MyDarkGreen"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="OIc-yT-lc0">
-                                    <rect key="frame" x="0.0" y="456" width="375" height="100"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5h-kH-XHc">
-                                            <rect key="frame" x="162.5" y="25" width="50" height="50"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="0Ow-Ii-VYS"/>
-                                                <constraint firstAttribute="height" constant="50" id="BQr-gP-jLm"/>
-                                            </constraints>
-                                            <state key="normal" image="addPhoto"/>
-                                            <connections>
-                                                <segue destination="V6T-dd-EHa" kind="presentation" modalPresentationStyle="fullScreen" id="ocA-aC-2Ol"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    <constraints>
-                                        <constraint firstItem="s5h-kH-XHc" firstAttribute="centerY" secondItem="OIc-yT-lc0" secondAttribute="centerY" id="JHm-WU-OZU"/>
-                                        <constraint firstItem="s5h-kH-XHc" firstAttribute="centerX" secondItem="OIc-yT-lc0" secondAttribute="centerX" id="TeW-H7-amV"/>
-                                    </constraints>
-                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="personImageCell" rowHeight="200" id="tQS-Vz-QhW" customClass="PersonImageViewCell" customModule="AllAbout" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="200"/>
@@ -259,9 +237,9 @@
                                                         <constraint firstAttribute="bottom" secondItem="MUb-N1-wFa" secondAttribute="bottom" id="vFW-Ho-F6v"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFH-ik-j5m">
-                                                    <rect key="frame" x="153" y="66" width="69" height="48"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="30"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFH-ik-j5m">
+                                                    <rect key="frame" x="153" y="-6" width="69" height="192"/>
+                                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="120"/>
                                                     <color key="textColor" name="MyGreen"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -295,7 +273,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EIK-fw-BuF"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gYz-pm-xDN"/>
+                    <navigationItem key="navigationItem" id="gYz-pm-xDN">
+                        <barButtonItem key="leftBarButtonItem" title="Выйти" id="FoZ-49-hhQ">
+                            <connections>
+                                <action selector="logOut:" destination="XZs-OD-EVq" id="8g4-0G-Icc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="P5l-ER-HlW">
+                            <connections>
+                                <segue destination="V6T-dd-EHa" kind="presentation" modalPresentationStyle="fullScreen" id="V7R-9N-a87"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="table" destination="TUe-9k-5Zb" id="4DZ-ep-951"/>
                         <outlet property="tableView" destination="TUe-9k-5Zb" id="DTo-Gm-IgW"/>
@@ -313,23 +302,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="0RC-6b-UWc">
-                                <rect key="frame" x="107" y="305" width="161" height="225"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0RC-6b-UWc">
+                                <rect key="frame" x="92.5" y="305" width="190" height="231.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выбрать фото" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVq-FV-6pg">
-                                        <rect key="frame" x="0.0" y="0.0" width="161" height="27.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="190" height="27.5"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
                                         <color key="textColor" name="MyGreen"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите имя" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eMs-3p-1hV">
-                                        <rect key="frame" x="0.0" y="77.5" width="161" height="46.5"/>
-                                        <color key="textColor" name="MyPink"/>
+                                        <rect key="frame" x="0.0" y="47.5" width="190" height="46.5"/>
+                                        <color key="textColor" name="MyGreen"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="23"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Дата рождения" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2fP-rd-TLA">
+                                        <rect key="frame" x="0.0" y="114" width="190" height="46.5"/>
+                                        <color key="textColor" name="MyGreen"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="23"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znt-QX-ih3">
-                                        <rect key="frame" x="0.0" y="174" width="161" height="51"/>
+                                        <rect key="frame" x="0.0" y="180.5" width="190" height="51"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="24"/>
                                         <state key="normal" title="Принять">
                                             <color key="titleColor" name="MyGreen"/>
@@ -364,7 +359,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
                                     <navigationItem id="UOa-mN-PaO">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.left" catalog="system" id="28L-YX-Ugi">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="28L-YX-Ugi">
                                             <connections>
                                                 <action selector="cancelAddPerson:" destination="V6T-dd-EHa" id="IY7-NV-JtV"/>
                                             </connections>
@@ -390,6 +385,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="vNm-Qs-G4M"/>
                     <connections>
+                        <outlet property="dateTextField" destination="2fP-rd-TLA" id="kEH-PF-UVQ"/>
                         <outlet property="nameTextField" destination="eMs-3p-1hV" id="qBH-bS-rmi"/>
                         <outlet property="photoImageView" destination="6wM-Nj-D3J" id="93h-7N-Ef8"/>
                     </connections>
@@ -427,9 +423,6 @@
         </namedColor>
         <namedColor name="MyGreen">
             <color red="0.49799999594688416" green="0.89800000190734863" blue="0.75300002098083496" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="MyPink">
-            <color red="0.83529411764705885" green="0.4823529411764706" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

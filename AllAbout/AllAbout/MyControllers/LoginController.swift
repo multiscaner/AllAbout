@@ -65,7 +65,7 @@ class LoginController: UIViewController {
 		
 		let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
 		
-		if StyleHelper.isPasswordValid(pass: cleanedPassword) == false {
+		if Validator.isPasswordValid(pass: cleanedPassword) == false {
 			return "Пароль должен содержать буквы и цифры."
 		}
 		

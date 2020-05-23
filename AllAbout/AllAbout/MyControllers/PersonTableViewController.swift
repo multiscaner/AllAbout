@@ -9,14 +9,13 @@
 import UIKit
 import AlamofireImage
 import JGProgressHUD
+import FirebaseAuth
 
 class PersonTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-	
 	let hud = JGProgressHUD(style: .dark)
 	var persons: [Person]?
 	let personHelper = PersonHelper()
 	@IBOutlet weak var tableView: UITableView!
-	
 	@IBOutlet weak var table: UITableView!
 	
 	override func viewDidLoad() {
@@ -26,7 +25,6 @@ class PersonTableViewController: UIViewController, UITableViewDelegate, UITableV
 	
 	override func viewWillAppear(_ animated: Bool) {
 		personHelper.readPersons { (persons, error) in
-			
 			if let error = error {
 				let alert = UIAlertController(title: "Ошибка", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
 				alert.addAction(UIAlertAction(title: "ОК", style: UIAlertAction.Style.default, handler: nil))
@@ -39,10 +37,6 @@ class PersonTableViewController: UIViewController, UITableViewDelegate, UITableV
 		}
 	}
 	
-	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 200.0
-	}
-	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return persons?.count ?? 0
 	}
@@ -51,15 +45,25 @@ class PersonTableViewController: UIViewController, UITableViewDelegate, UITableV
 		guard let person = persons?[indexPath.row] else {
 			return UITableViewCell()
 		}
+		
 		if let imageUrlString = person.imageUrlString,
 			let url = URL(string: imageUrlString),
 			let cell = tableView.dequeueReusableCell(withIdentifier: "personImageCell", for: indexPath) as? PersonImageViewCell {
 			cell.personImage.af.setImage(withURL: url)
 			return cell
 		} else if let cell = tableView.dequeueReusableCell(withIdentifier: "personLabelCell", for: indexPath) as? LabelTableViewCell {
-			cell.nameLabel.text = person.name
+			cell.nameLabel.text = String(person.name.first!)
 			return cell
 		}
 		return UITableViewCell()
+	}
+	
+	@IBAction func logOut(_ sender: UIBarButtonItem) {
+		do {
+			try Auth.auth().signOut()
+			dismiss(animated: true, completion: nil)
+		} catch let error {
+			print(error)
+		}
 	}
 }

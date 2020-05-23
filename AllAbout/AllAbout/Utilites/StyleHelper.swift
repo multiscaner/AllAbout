@@ -11,12 +11,6 @@ import UIKit
 
 class StyleHelper {
 	
-	static func isPasswordValid(pass: String) -> Bool {
-		let password = NSPredicate(format:
-			"SELF MATCHES %@", "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}$")
-		return password.evaluate(with: pass)
-	}
-	
 	static func createLine(textField: UITextField) {
 		let bottomLine = CALayer()
 		bottomLine.frame = CGRect(x: 0, y: textField.frame.height - 2, width: textField.frame.width, height: 2)

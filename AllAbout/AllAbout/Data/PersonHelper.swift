@@ -58,7 +58,8 @@ class PersonHelper {
 				let dictionary = document.data()
 				let name = dictionary["name"] as? String
 				let imageUrl = dictionary["imageUrl"] as? String
-				let person = Person(id: document.documentID, name: name ?? "", imageUrlString: imageUrl)
+				let date = dictionary["date"] as? String
+				let person = Person(id: document.documentID, name: name ?? "", imageUrlString: imageUrl, date: date ?? "")
 				return person
 			})
 			
@@ -74,7 +75,15 @@ class PersonHelper {
 		
 		let userDocument = firestore.document("users/\(currentUserId)")
 		let personsCollection = userDocument.collection("persons")
+		
 		let personDocument = personsCollection.addDocument(data: ["name": person.name])
+		
+		if let birthDate = person.birthDate {
+			let dateFormatter = DateFormatter()
+			dateFormatter.dateFormat = "dd MMM yyyy"
+			let dateString = dateFormatter.string(from: birthDate)
+			personDocument.setData(["date": dateString], merge: true)
+		}
 	
 		if let image = person.image {
 			upload(name: personDocument.documentID, photo: image) { (url, error) in
