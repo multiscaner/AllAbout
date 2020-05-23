@@ -212,6 +212,9 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
+  - Alamofire (5.2.0)
+  - AlamofireImage (4.1.0):
+    - Alamofire (~> 5.1)
   - BoringSSL-GRPC (0.0.7):
     - BoringSSL-GRPC/Implementation (= 0.0.7)
     - BoringSSL-GRPC/Interface (= 0.0.7)
@@ -229,6 +232,9 @@ PODS:
   - Firebase/Firestore (6.24.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 1.13.0)
+  - Firebase/Storage (6.24.0):
+    - Firebase/CoreOnly
+    - FirebaseStorage (~> 3.6.1)
   - FirebaseAuth (6.5.3):
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 6.6)
@@ -265,6 +271,10 @@ PODS:
     - "gRPC-C++ (~> 1.28.0)"
     - leveldb-library (~> 1.22)
     - nanopb (~> 1.30905.0)
+  - FirebaseStorage (3.6.1):
+    - FirebaseAuthInterop (~> 1.1)
+    - FirebaseCore (~> 6.6)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleDataTransport (6.1.0)
   - GoogleDataTransportCCTSupport (3.1.0):
     - GoogleDataTransport (~> 6.1)
@@ -319,14 +329,18 @@ PODS:
   - SwiftLint (0.39.2)
 
 DEPENDENCIES:
+  - AlamofireImage (~> 4.1)
   - Firebase/Auth (= 6.24.0)
   - Firebase/Database (= 6.24.0)
   - Firebase/Firestore (= 6.24.0)
+  - Firebase/Storage
   - SwiftLint
 
 SPEC REPOS:
   trunk:
     - abseil
+    - Alamofire
+    - AlamofireImage
     - BoringSSL-GRPC
     - Firebase
     - FirebaseAuth
@@ -336,6 +350,7 @@ SPEC REPOS:
     - FirebaseCoreDiagnosticsInterop
     - FirebaseDatabase
     - FirebaseFirestore
+    - FirebaseStorage
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
@@ -349,6 +364,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
+  Alamofire: c1ca147559e730bfb2182c8c7aafbdd90a867987
+  AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   Firebase: b28e55c60efd98963cd9011fe2fac5a10c2ba124
   FirebaseAuth: 7047aec89c0b17ecd924a550c853f0c27ac6015e
@@ -358,6 +375,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
   FirebaseDatabase: 4e99c0c475d1ee0aa64ae2b53c93f80b7b60d7d9
   FirebaseFirestore: 35f8f67d7b25e4743c62ea6e46c38cafa8dc32b5
+  FirebaseStorage: f4f39ae834a7145963b913f54e2f24a9db1d8fac
   GoogleDataTransport: f6f8eba931df03ebd2232ff4645aa85f8f47b5ab
   GoogleDataTransportCCTSupport: d70a561f7d236af529fee598835caad5e25f6d3d
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
@@ -369,6 +387,6 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
 
-PODFILE CHECKSUM: fddea350e3c1b24efd621879864f8bc8f70a9be4
+PODFILE CHECKSUM: 20874a8ccc468eb84083497e87b911758abb9031
 
 COCOAPODS: 1.9.1

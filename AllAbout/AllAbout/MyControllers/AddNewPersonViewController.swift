@@ -52,9 +52,16 @@ class AddNewPersonViewController: UIViewController, UIImagePickerControllerDeleg
 			return
 		}
 		
-		personHelper.savePerson(person: Person(name: personName, image: personImage))
-		self.navigationController?.popViewController(animated: true)
-		self.dismiss(animated: true, completion: nil)
+		personHelper.savePerson(person: Person(name: personName, image: personImage), completion: { success, error in
+			if success {
+				self.navigationController?.popViewController(animated: true)
+				self.dismiss(animated: true, completion: nil)
+			} else if let error = error {
+				let alert = UIAlertController(title: "Ошибка", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+				alert.addAction(UIAlertAction(title: "ОК", style: UIAlertAction.Style.default, handler: nil))
+				self.present(alert, animated: true, completion: nil)
+			}
+		})
 	}
 
 }

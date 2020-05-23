@@ -9,21 +9,20 @@
 import Foundation
 import UIKit
 
-struct Person: Codable {
+struct Person {
 	let name: String
-	let id: String?
-	private let imageData: Data?
-	var image: UIImage? {
-		if let data = imageData {
-			return UIImage(data: data)
-		}
-		return nil
-	}
+	var id: String?
+	var image: UIImage?
+	var imageUrlString: String?
 	
-	init(id: String? = nil, name: String, image: UIImage?) {
+	init(name: String, image: UIImage?) {
 		self.name = name
-		let imageData = image?.pngData()
-		self.imageData = imageData
+		self.image = image
+	}
+
+	init(id: String? = nil, name: String, imageUrlString: String?) {
+		self.name = name
+		self.imageUrlString = imageUrlString
 		self.id = id
 	}
 }

@@ -9,5 +9,7 @@ pod 'SwiftLint'
 pod 'Firebase/Database','6.24.0'
 pod 'Firebase/Auth','6.24.0'
 pod 'Firebase/Firestore','6.24.0'
+pod 'Firebase/Storage'
+pod 'AlamofireImage', '~> 4.1'
 
 end
