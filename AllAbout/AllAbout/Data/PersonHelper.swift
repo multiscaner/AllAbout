@@ -59,7 +59,11 @@ class PersonHelper {
 				let name = dictionary["name"] as? String
 				let imageUrl = dictionary["imageUrl"] as? String
 				let date = dictionary["date"] as? String
-				let person = Person(id: document.documentID, name: name ?? "", imageUrlString: imageUrl, date: date ?? "")
+				let height = dictionary["height"] as? Int
+				let weight = dictionary["weight"] as? Int
+				let shoesSize = dictionary["shoesSize"] as? Int
+				let socksSize = dictionary["socksSize"] as? Int
+				let person = Person(id: document.documentID, name: name ?? "", imageUrlString: imageUrl, date: date ?? "", height: height, weight: weight, shoesSize: shoesSize, socksSize: socksSize)
 				return person
 			})
 			
@@ -79,7 +83,21 @@ class PersonHelper {
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "dd MMM yyyy"
 		let dateString = dateFormatter.string(from: person.birthDate)
-		let personDocument = personsCollection.addDocument(data: ["name": person.name, "date": dateString])
+		
+		var personDocument: DocumentReference!
+		if let id = person.id {
+			personDocument = personsCollection.document(id)
+		} else {
+			personDocument = personsCollection.addDocument(data: [:])
+		}
+		
+		var dictionary: [String: Any] = ["name": person.name, "date": dateString]
+		
+		dictionary["height"] = person.height
+		dictionary["weight"] = person.weight
+		dictionary["shoesSize"] = person.shoesSize
+		dictionary["socksSize"] = person.socksSize
+		personDocument.setData(dictionary, merge: true)
 		
 		if let image = person.image {
 			upload(name: personDocument.documentID, photo: image) { (url, error) in

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 struct Person {
-	let name: String
+	var name: String
 	var id: String?
 	var image: UIImage?
 	var imageUrlString: String?
@@ -28,12 +28,16 @@ struct Person {
 		birthDate = dateFormatter.date(from: date) ?? Date()
 	}
 
-	init(id: String? = nil, name: String, imageUrlString: String?, date: String) {
+	init(id: String? = nil, name: String, imageUrlString: String?, date: String, height: Int?, weight: Int?, shoesSize: Int?, socksSize: Int?) {
 		self.name = name
 		self.imageUrlString = imageUrlString
 		self.id = id
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "dd MMM yyyy"
 		birthDate = dateFormatter.date(from: date) ?? Date()
+		self.height = height
+		self.weight = weight
+		self.shoesSize = shoesSize
+		self.socksSize = socksSize
 	}
 }

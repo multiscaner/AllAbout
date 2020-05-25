@@ -374,7 +374,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="TI2-9f-b7K">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="r4d-gh-N5c"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="r4d-gh-N5c">
+                            <connections>
+                                <action selector="savePerson:" destination="wkK-yN-tAF" id="btS-az-pAS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="firstLetterLabel" destination="SM5-GP-Lz2" id="Z7y-V7-KlD"/>
