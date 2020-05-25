@@ -9,31 +9,34 @@
 import UIKit
 
 class PersonImageViewCell: UITableViewCell {
-
+	
+	@IBOutlet weak var firstLetterLabel: UILabel!
 	@IBOutlet weak var personImage: UIImageView!
 	@IBOutlet weak var shadowView: UIView!
+	@IBOutlet weak var nameLabel: UILabel!
+	@IBOutlet weak var dateLabel: UILabel!
 	
 	override func awakeFromNib() {
-        super.awakeFromNib()
+		super.awakeFromNib()
 		shadowView.makeShadow()
-			personImage.makeRounded()
+		personImage.makeRounded()
 	}
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+	
+	override func setSelected(_ selected: Bool, animated: Bool) {
+		super.setSelected(selected, animated: animated)
 		
 	}
-
+	
 }
 extension UIImageView {
-
-    func makeRounded() {
-        self.layer.borderWidth = 3
-        self.layer.masksToBounds = false
-        self.layer.borderColor = UIColor(named: "MyGreen")?.cgColor
-        self.layer.cornerRadius = self.frame.height / 2
-        self.clipsToBounds = true
-    }
+	
+	func makeRounded() {
+		self.layer.borderWidth = 3
+		self.layer.masksToBounds = false
+		self.layer.borderColor = UIColor(named: "MyGreen")?.cgColor
+		self.layer.cornerRadius = self.frame.height / 2
+		self.clipsToBounds = true
+	}
 }
 
 extension UIView {

@@ -76,15 +76,11 @@ class PersonHelper {
 		let userDocument = firestore.document("users/\(currentUserId)")
 		let personsCollection = userDocument.collection("persons")
 		
-		let personDocument = personsCollection.addDocument(data: ["name": person.name])
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "dd MMM yyyy"
+		let dateString = dateFormatter.string(from: person.birthDate)
+		let personDocument = personsCollection.addDocument(data: ["name": person.name, "date": dateString])
 		
-		if let birthDate = person.birthDate {
-			let dateFormatter = DateFormatter()
-			dateFormatter.dateFormat = "dd MMM yyyy"
-			let dateString = dateFormatter.string(from: birthDate)
-			personDocument.setData(["date": dateString], merge: true)
-		}
-	
 		if let image = person.image {
 			upload(name: personDocument.documentID, photo: image) { (url, error) in
 				guard let url = url else {

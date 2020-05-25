@@ -14,14 +14,14 @@ struct Person {
 	var id: String?
 	var image: UIImage?
 	var imageUrlString: String?
-	var birthDate: Date?
+	var birthDate: Date
 	
 	init(name: String, image: UIImage?, date: String) {
 		self.name = name
 		self.image = image
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "dd MMM yyyy"
-		birthDate = dateFormatter.date(from: date)
+		birthDate = dateFormatter.date(from: date) ?? Date()
 	}
 
 	init(id: String? = nil, name: String, imageUrlString: String?, date: String) {
@@ -30,6 +30,6 @@ struct Person {
 		self.id = id
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "dd MMM yyyy"
-		birthDate = dateFormatter.date(from: date)
+		birthDate = dateFormatter.date(from: date) ?? Date()
 	}
 }

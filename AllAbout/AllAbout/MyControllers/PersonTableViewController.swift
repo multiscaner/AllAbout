@@ -16,7 +16,6 @@ class PersonTableViewController: UIViewController, UITableViewDelegate, UITableV
 	var persons: [Person]?
 	let personHelper = PersonHelper()
 	@IBOutlet weak var tableView: UITableView!
-	@IBOutlet weak var table: UITableView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -50,12 +49,28 @@ class PersonTableViewController: UIViewController, UITableViewDelegate, UITableV
 			let url = URL(string: imageUrlString),
 			let cell = tableView.dequeueReusableCell(withIdentifier: "personImageCell", for: indexPath) as? PersonImageViewCell {
 			cell.personImage.af.setImage(withURL: url)
+			cell.firstLetterLabel.text = ""
+			cell.nameLabel.text = person.name
+			let dateFormatter = DateFormatter()
+			dateFormatter.dateFormat = "dd MMM yyyy"
+			cell.dateLabel.text = dateFormatter.string(from: person.birthDate)
 			return cell
-		} else if let cell = tableView.dequeueReusableCell(withIdentifier: "personLabelCell", for: indexPath) as? LabelTableViewCell {
-			cell.nameLabel.text = String(person.name.first!)
+		} else if let cell = tableView.dequeueReusableCell(withIdentifier: "personImageCell", for: indexPath) as? PersonImageViewCell {
+			cell.firstLetterLabel.text = String(person.name.first!)
+			cell.nameLabel.text = person.name
+			let dateFormatter = DateFormatter()
+			dateFormatter.dateFormat = "dd MMM yyyy"
+			cell.dateLabel.text = dateFormatter.string(from: person.birthDate)
 			return cell
 		}
 		return UITableViewCell()
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let profileViewController = segue.destination as? ProfileTableViewController,
+			let person = sender as? Person {
+			profileViewController.person = person
+		}
 	}
 	
 	@IBAction func logOut(_ sender: UIBarButtonItem) {
@@ -65,5 +80,12 @@ class PersonTableViewController: UIViewController, UITableViewDelegate, UITableV
 		} catch let error {
 			print(error)
 		}
+	}
+}
+extension PersonTableViewController {
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let person = persons?[indexPath.row]
+		performSegue(withIdentifier: "profileSegue", sender: person)
 	}
 }
