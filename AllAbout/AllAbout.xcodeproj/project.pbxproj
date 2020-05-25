@@ -98,6 +98,7 @@
 				93B2A7FA246BB90A00155E3D /* RegistrationViewController.swift */,
 				934FA3B7245C172700492A89 /* PersonTableViewController.swift */,
 				934FA3BB245C8E3D00492A89 /* AddNewPersonViewController.swift */,
+				93C87A02247AC645006CD318 /* ProfileTableViewController.swift */,
 			);
 			path = MyControllers;
 			sourceTree = "<group>";
@@ -115,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				93B2A7FD246C30A100155E3D /* PersonImageViewCell.swift */,
+				93C87A06247AD64C006CD318 /* ProfileTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -150,8 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				93F71097241A350300A74824 /* Main.storyboard */,
-				93C87A02247AC645006CD318 /* ProfileTableViewController.swift */,
-				93C87A06247AD64C006CD318 /* ProfileTableViewCell.swift */,
 				934FA3B6245B082E00492A89 /* MyControllers */,
 				93AB308924769B7D00A25402 /* Cells */,
 				93596BB82464022B00BEB8FE /* Data */,

@@ -18,4 +18,20 @@ class StyleHelper {
 		textField.borderStyle = .none
 		textField.layer.addSublayer(bottomLine)
 	}
+	
+	static 	func makeRounded(image: UIImageView) {
+		image.layer.borderWidth = 3
+		image.layer.masksToBounds = false
+		image.layer.borderColor = UIColor(named: "MyGreen")?.cgColor
+		image.layer.cornerRadius = image.frame.height / 2
+		image.clipsToBounds = true
+	}
+	
+	static 	func makeShadow(view: UIView) {
+		view.layer.cornerRadius = view.frame.height / 2
+		view.layer.shadowColor = UIColor.darkGray.cgColor
+		view.layer.shadowOffset = CGSize(width: 0, height: 0)
+		view.layer.shadowRadius = 10
+		view.layer.shadowOpacity = 1
+	}
 }

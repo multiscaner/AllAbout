@@ -276,7 +276,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="TUe-9k-5Zb" id="DTo-Gm-IgW"/>
-                        <segue destination="wkK-yN-tAF" kind="presentation" identifier="profileSegue" modalPresentationStyle="fullScreen" id="8ea-Tf-yrV"/>
+                        <segue destination="wkK-yN-tAF" kind="show" identifier="profileSegue" id="8ea-Tf-yrV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oYy-9K-vE7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -373,9 +373,11 @@
                             <outlet property="delegate" destination="wkK-yN-tAF" id="IAb-To-C6r"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="TI2-9f-b7K"/>
                     <connections>
                         <outlet property="firstLetterLabel" destination="SM5-GP-Lz2" id="Z7y-V7-KlD"/>
                         <outlet property="image" destination="ucK-NS-tC3" id="hep-i9-xpi"/>
+                        <outlet property="shadowView" destination="C9A-Ms-iwa" id="70P-Jd-1ZW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6b-QB-x2Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -390,6 +392,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zAY-bu-7vg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="UOa-mN-PaO">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="28L-YX-Ugi">
+                                            <connections>
+                                                <action selector="cancelAddPerson:" destination="V6T-dd-EHa" id="IY7-NV-JtV"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0RC-6b-UWc">
                                 <rect key="frame" x="92.5" y="305" width="190" height="231.5"/>
                                 <subviews>
@@ -431,9 +445,9 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2j-mw-swc">
-                                <rect key="frame" x="87.5" y="100" width="200" height="200"/>
+                                <rect key="frame" x="87.5" y="75" width="200" height="250"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="2kj-jx-fo8"/>
+                                    <constraint firstAttribute="height" constant="250" id="2kj-jx-fo8"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Ogs-q9-abX"/>
                                 </constraints>
                                 <state key="normal">
@@ -443,18 +457,6 @@
                                     <action selector="choosePhoto:" destination="V6T-dd-EHa" eventType="touchUpInside" id="gte-S4-GPv"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zAY-bu-7vg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <items>
-                                    <navigationItem id="UOa-mN-PaO">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="28L-YX-Ugi">
-                                            <connections>
-                                                <action selector="cancelAddPerson:" destination="V6T-dd-EHa" id="IY7-NV-JtV"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" name="MyGreen"/>
@@ -487,7 +489,9 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="o9g-wn-Tfv" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="wdP-3y-fnf"/>
+                    <navigationItem key="navigationItem" id="wdP-3y-fnf">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="QoZ-HB-hpl"/>
+                    </navigationItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sHI-x8-ANW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

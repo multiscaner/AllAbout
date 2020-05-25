@@ -9,8 +9,8 @@
 import UIKit
 
 class ProfileTableViewCell: UITableViewCell {
-	@IBOutlet weak var profileCellTextField: UITextField!
 	
+	@IBOutlet weak var profileCellTextField: UITextField!
 	@IBOutlet weak var profileCellLabel: UILabel!
 	override func awakeFromNib() {
         super.awakeFromNib()
