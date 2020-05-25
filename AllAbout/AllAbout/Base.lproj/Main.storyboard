@@ -335,8 +335,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAi-n7-yXH">
-                                            <rect key="frame" x="50" y="26.5" width="100" height="27.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAi-n7-yXH">
+                                            <rect key="frame" x="30" y="26.5" width="100" height="27.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="BcK-VD-AZF"/>
                                             </constraints>
@@ -344,19 +344,19 @@
                                             <color key="textColor" name="MyGreen"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Placeholder" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8RY-Ic-wwp">
-                                            <rect key="frame" x="222.5" y="21.5" width="102.5" height="37"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Placeholder" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8RY-Ic-wwp">
+                                            <rect key="frame" x="232" y="21.5" width="113" height="37"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="ZFL-wv-jAf"/>
                                             </constraints>
                                             <color key="textColor" name="MyGreen"/>
-                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="sAi-n7-yXH" firstAttribute="leading" secondItem="gvb-K2-j1s" secondAttribute="leading" constant="50" id="76m-CV-ktk"/>
-                                        <constraint firstAttribute="trailing" secondItem="8RY-Ic-wwp" secondAttribute="trailing" constant="50" id="HZa-Ma-evq"/>
+                                        <constraint firstItem="sAi-n7-yXH" firstAttribute="leading" secondItem="gvb-K2-j1s" secondAttribute="leading" constant="30" id="76m-CV-ktk"/>
+                                        <constraint firstAttribute="trailing" secondItem="8RY-Ic-wwp" secondAttribute="trailing" constant="30" id="HZa-Ma-evq"/>
                                         <constraint firstItem="8RY-Ic-wwp" firstAttribute="centerY" secondItem="gvb-K2-j1s" secondAttribute="centerY" id="QJl-Bw-Tef"/>
                                         <constraint firstItem="8RY-Ic-wwp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sAi-n7-yXH" secondAttribute="trailing" constant="8" symbolic="YES" id="qjm-Ki-BjH"/>
                                         <constraint firstItem="sAi-n7-yXH" firstAttribute="centerY" secondItem="gvb-K2-j1s" secondAttribute="centerY" id="yYo-wd-dIU"/>
@@ -373,7 +373,9 @@
                             <outlet property="delegate" destination="wkK-yN-tAF" id="IAb-To-C6r"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="TI2-9f-b7K"/>
+                    <navigationItem key="navigationItem" id="TI2-9f-b7K">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="r4d-gh-N5c"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="firstLetterLabel" destination="SM5-GP-Lz2" id="Z7y-V7-KlD"/>
                         <outlet property="image" destination="ucK-NS-tC3" id="hep-i9-xpi"/>

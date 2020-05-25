@@ -15,7 +15,11 @@ struct Person {
 	var image: UIImage?
 	var imageUrlString: String?
 	var birthDate: Date
-	
+	var height: Int?
+	var weight: Int?
+	var shoesSize: Int?
+	var socksSize: Int?
+
 	init(name: String, image: UIImage?, date: String) {
 		self.name = name
 		self.image = image
