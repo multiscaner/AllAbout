@@ -20,7 +20,8 @@ enum PersonCell: Int {
 	case socksSize
 }
 
-class ProfileTableViewController: UITableViewController, UITextFieldDelegate {
+class ProfileTableViewController: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+	let imagePickerController = UIImagePickerController()
 	var person: Person!
 	let hud = JGProgressHUD(style: .dark)
 	@IBOutlet weak var shadowView: UIView!
@@ -30,6 +31,7 @@ class ProfileTableViewController: UITableViewController, UITextFieldDelegate {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		imagePickerController.delegate = self
 		StyleHelper.makeRounded(image: image)
 		StyleHelper.makeShadow(view: shadowView)
 		
@@ -40,6 +42,20 @@ class ProfileTableViewController: UITableViewController, UITextFieldDelegate {
 		} else {
 			firstLetterLabel.text = String(person.name.first!)
 		}
+	}
+	@IBAction func choosePhoto(_ sender: UIButton) {
+		imagePickerController.allowsEditing = false
+			imagePickerController.sourceType = .photoLibrary
+			present(imagePickerController, animated: true, completion: nil)
+	}
+	
+	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+		if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+			image.contentMode = .scaleAspectFill
+			image.image = pickedImage
+			person.image = pickedImage
+		}
+		dismiss(animated: true, completion: nil)
 	}
 	
 	@IBAction func savePerson(_ sender: Any) {

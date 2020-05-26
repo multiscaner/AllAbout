@@ -320,9 +320,22 @@
                                         <constraint firstItem="ucK-NS-tC3" firstAttribute="top" secondItem="C9A-Ms-iwa" secondAttribute="top" id="zsX-0M-6ZP"/>
                                     </constraints>
                                 </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSB-wq-5u7">
+                                    <rect key="frame" x="112.5" y="15" width="150" height="150"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="150" id="AWK-fw-i36"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Ubt-ls-bCE"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="choosePhoto:" destination="wkK-yN-tAF" eventType="touchUpInside" id="Z5e-X2-irE"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
+                                <constraint firstItem="qSB-wq-5u7" firstAttribute="centerY" secondItem="p01-s0-X5K" secondAttribute="centerY" id="8Tb-39-tBo"/>
+                                <constraint firstItem="qSB-wq-5u7" firstAttribute="centerX" secondItem="p01-s0-X5K" secondAttribute="centerX" id="FqS-FQ-5U7"/>
                                 <constraint firstItem="C9A-Ms-iwa" firstAttribute="centerX" secondItem="p01-s0-X5K" secondAttribute="centerX" id="c3b-20-czF"/>
                                 <constraint firstItem="C9A-Ms-iwa" firstAttribute="centerY" secondItem="p01-s0-X5K" secondAttribute="centerY" id="uAC-2f-18v"/>
                             </constraints>
