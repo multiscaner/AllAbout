@@ -11,7 +11,7 @@ import AlamofireImage
 import JGProgressHUD
 import FirebaseAuth
 
-enum PersonCell: Int {
+enum PersonCell: Int, CaseIterable {
 	case name
 	case birthDate
 	case height
@@ -28,6 +28,7 @@ class ProfileTableViewController: UITableViewController, UITextFieldDelegate, UI
 	@IBOutlet weak var image: UIImageView!
 	@IBOutlet weak var firstLetterLabel: UILabel!
 	let personHelper = PersonHelper()
+	var dateTextField: UITextField?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -45,8 +46,8 @@ class ProfileTableViewController: UITableViewController, UITextFieldDelegate, UI
 	}
 	@IBAction func choosePhoto(_ sender: UIButton) {
 		imagePickerController.allowsEditing = false
-			imagePickerController.sourceType = .photoLibrary
-			present(imagePickerController, animated: true, completion: nil)
+		imagePickerController.sourceType = .photoLibrary
+		present(imagePickerController, animated: true, completion: nil)
 	}
 	
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
@@ -73,9 +74,16 @@ class ProfileTableViewController: UITableViewController, UITextFieldDelegate, UI
 		})
 	}
 	
+	@objc func handleDatePicker(sender: UIDatePicker) {
+		person.birthDate = sender.date
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "dd MMM yyyy"
+		dateTextField?.text = dateFormatter.string(from: sender.date)
+	}
+	
 	// MARK: - Table view data source
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 6
+		return PersonCell.allCases.count
 	}
 	
 	// swiftlint:disable cyclomatic_complexity
@@ -83,9 +91,9 @@ class ProfileTableViewController: UITableViewController, UITextFieldDelegate, UI
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as? ProfileTableViewCell else {
 			return UITableViewCell()
 		}
-		
 		cell.profileCellTextField.delegate = self
 		cell.profileCellTextField.tag = indexPath.row
+		cell.profileCellTextField.inputView = nil
 		
 		switch PersonCell(rawValue: indexPath.row) {
 		case .name:
@@ -93,10 +101,12 @@ class ProfileTableViewController: UITableViewController, UITextFieldDelegate, UI
 			cell.profileCellTextField.text = person.name
 			cell.profileCellTextField.keyboardType = .default
 		case .birthDate:
+			cell.profileCellTextField.inputView = datePicker
 			cell.profileCellLabel.text = "Дата рождения:"
-			let dateFormatter = DateFormatter()
-			dateFormatter.dateFormat = "dd MMM yyyy"
-			cell.profileCellTextField.text = dateFormatter.string(from: person.birthDate)
+			dateTextField = cell.profileCellTextField
+			if let birthDateString = person.birthDateString {
+				cell.profileCellTextField.text = birthDateString
+			}
 		case .height:
 			cell.profileCellLabel.text = "Рост:"
 			if let height = person.height {
@@ -126,15 +136,18 @@ class ProfileTableViewController: UITableViewController, UITextFieldDelegate, UI
 		return cell
 	}
 	
+	var datePicker: UIDatePicker {
+		let datePicker = UIDatePicker()
+		datePicker.datePickerMode = .date
+		datePicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
+		return datePicker
+	}
+	
 	func textFieldDidEndEditing(_ textField: UITextField) {
 		guard let text = textField.text else { return }
 		switch PersonCell(rawValue: textField.tag) {
 		case .name:
 			person.name = text
-		case .birthDate:
-			let dateFormatter = DateFormatter()
-			dateFormatter.dateFormat = "dd MMM yyyy"
-			person.birthDate = dateFormatter.date(from: text) ?? Date()
 		case .height:
 			person.height = Int(text)
 		case .weight:

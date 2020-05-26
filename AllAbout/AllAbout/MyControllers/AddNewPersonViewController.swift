@@ -13,18 +13,18 @@ class AddNewPersonViewController: UIViewController, UIImagePickerControllerDeleg
 	let hud = JGProgressHUD(style: .dark)
 	var personImage: UIImage?
 	let personHelper = PersonHelper()
+	let imagePickerController = UIImagePickerController()
 	@IBOutlet weak var photoImageView: UIImageView!
 	@IBOutlet weak var dateTextField: UITextField!
 	@IBOutlet weak var nameTextField: UITextField!
-	let imagePickerController = UIImagePickerController()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		imagePickerController.delegate = self
 		let datePicker = UIDatePicker()
 		datePicker.datePickerMode = .date
-		dateTextField.inputView = datePicker
 		datePicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
+		dateTextField.inputView = datePicker
 	}
 	
 	@objc func handleDatePicker(sender: UIDatePicker) {

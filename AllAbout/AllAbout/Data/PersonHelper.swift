@@ -58,12 +58,12 @@ class PersonHelper {
 				let dictionary = document.data()
 				let name = dictionary["name"] as? String
 				let imageUrl = dictionary["imageUrl"] as? String
-				let date = dictionary["date"] as? String
+				let date = dictionary["date"] as? Timestamp
 				let height = dictionary["height"] as? Int
 				let weight = dictionary["weight"] as? Int
 				let shoesSize = dictionary["shoesSize"] as? Int
 				let socksSize = dictionary["socksSize"] as? Int
-				let person = Person(id: document.documentID, name: name ?? "", imageUrlString: imageUrl, date: date ?? "", height: height, weight: weight, shoesSize: shoesSize, socksSize: socksSize)
+				let person = Person(id: document.documentID, name: name ?? "", imageUrlString: imageUrl, date: date?.dateValue(), height: height, weight: weight, shoesSize: shoesSize, socksSize: socksSize)
 				return person
 			})
 			
@@ -80,10 +80,6 @@ class PersonHelper {
 		let userDocument = firestore.document("users/\(currentUserId)")
 		let personsCollection = userDocument.collection("persons")
 		
-		let dateFormatter = DateFormatter()
-		dateFormatter.dateFormat = "dd MMM yyyy"
-		let dateString = dateFormatter.string(from: person.birthDate)
-		
 		var personDocument: DocumentReference!
 		if let id = person.id {
 			personDocument = personsCollection.document(id)
@@ -91,8 +87,10 @@ class PersonHelper {
 			personDocument = personsCollection.addDocument(data: [:])
 		}
 		
-		var dictionary: [String: Any] = ["name": person.name, "date": dateString]
-		
+		var dictionary: [String: Any] = ["name": person.name]
+		if let date = person.birthDate {
+			dictionary["date"] = Timestamp(date: date)
+		}
 		dictionary["height"] = person.height
 		dictionary["weight"] = person.weight
 		dictionary["shoesSize"] = person.shoesSize

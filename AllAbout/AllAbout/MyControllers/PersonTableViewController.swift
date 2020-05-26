@@ -41,29 +41,24 @@ class PersonTableViewController: UIViewController, UITableViewDelegate, UITableV
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard let person = persons?[indexPath.row] else {
-			return UITableViewCell()
+		guard let person = persons?[indexPath.row],
+			let cell = tableView.dequeueReusableCell(withIdentifier: "personImageCell", for: indexPath) as? PersonImageViewCell else {
+				return UITableViewCell()
+		}
+		
+		cell.nameLabel.text = person.name
+		if let birthDateString = person.birthDateString {
+			cell.dateLabel.text = birthDateString
 		}
 		
 		if let imageUrlString = person.imageUrlString,
-			let url = URL(string: imageUrlString),
-			let cell = tableView.dequeueReusableCell(withIdentifier: "personImageCell", for: indexPath) as? PersonImageViewCell {
+			let url = URL(string: imageUrlString) {
 			cell.personImage.af.setImage(withURL: url)
 			cell.firstLetterLabel.text = ""
-			cell.nameLabel.text = person.name
-			let dateFormatter = DateFormatter()
-			dateFormatter.dateFormat = "dd MMM yyyy"
-			cell.dateLabel.text = dateFormatter.string(from: person.birthDate)
-			return cell
-		} else if let cell = tableView.dequeueReusableCell(withIdentifier: "personImageCell", for: indexPath) as? PersonImageViewCell {
+		} else {
 			cell.firstLetterLabel.text = String(person.name.first!)
-			cell.nameLabel.text = person.name
-			let dateFormatter = DateFormatter()
-			dateFormatter.dateFormat = "dd MMM yyyy"
-			cell.dateLabel.text = dateFormatter.string(from: person.birthDate)
-			return cell
 		}
-		return UITableViewCell()
+		return cell
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
