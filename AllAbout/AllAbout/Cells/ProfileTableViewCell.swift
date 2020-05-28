@@ -12,9 +12,10 @@ class ProfileTableViewCell: UITableViewCell {
 	
 	@IBOutlet weak var profileCellTextField: UITextField!
 	@IBOutlet weak var profileCellLabel: UILabel!
+	
 	override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+		StyleHelper.createLine(textField: profileCellTextField)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

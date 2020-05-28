@@ -16,6 +16,14 @@ class PersonHelper {
 	var currentUserId: String? {
 		return Auth.auth().currentUser?.uid
 	}
+	
+	var personsCollection: CollectionReference? {
+		guard let currentUserId = currentUserId else {
+			return nil
+		}
+		let userDocument = firestore.document("users/\(currentUserId)")
+		return userDocument.collection("persons")
+	}
 
 	func upload(name: String, photo: UIImage, completion: @escaping (URL?, Error?) -> Void) {
 		let refer = Storage.storage().reference().child("avatars").child(name)
@@ -41,13 +49,11 @@ class PersonHelper {
 	}
 	
 	func readPersons(completion: @escaping ([Person], Error?) -> Void) {
-		guard let currentUserId = currentUserId else {
+		guard let personsCollection = personsCollection else {
 			completion([], nil)
 			return
 		}
 		
-		let userDocument = firestore.document("users/\(currentUserId)")
-		let personsCollection = userDocument.collection("persons")
 		personsCollection.getDocuments { (shapshot, error) in
 			if let error = error {
 				completion([], error)
@@ -72,14 +78,11 @@ class PersonHelper {
 	}
 	
 	func savePerson(person: Person, completion: @escaping (Bool, Error?) -> Void) {
-		guard let currentUserId = currentUserId else {
+		guard let personsCollection = personsCollection else {
 			completion(false, nil)
 			return
 		}
-		
-		let userDocument = firestore.document("users/\(currentUserId)")
-		let personsCollection = userDocument.collection("persons")
-		
+	
 		var personDocument: DocumentReference!
 		if let id = person.id {
 			personDocument = personsCollection.document(id)
@@ -109,6 +112,22 @@ class PersonHelper {
 			}
 		} else {
 			completion(true, nil)
+		}
+	}
+	
+	func deletePerson(person: Person, completion: @escaping (Bool, Error?) -> Void) {
+		guard let personsCollection = personsCollection, let id = person.id  else {
+			completion(false, nil)
+			return
+		}
+		
+		let personDocument = personsCollection.document(id)
+		personDocument.delete { (error) in
+			if let error = error {
+				completion(false, error)
+			} else {
+				completion(true, nil)
+			}
 		}
 	}
 }

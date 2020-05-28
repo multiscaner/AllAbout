@@ -19,6 +19,8 @@ class AddNewPersonViewController: UIViewController, UIImagePickerControllerDeleg
 	@IBOutlet weak var nameTextField: UITextField!
 	
 	override func viewDidLoad() {
+		StyleHelper.createLine(textField: dateTextField)
+		StyleHelper.createLine(textField: nameTextField)
 		super.viewDidLoad()
 		imagePickerController.delegate = self
 		let datePicker = UIDatePicker()

@@ -22,7 +22,7 @@ class StyleHelper {
 	static 	func makeRounded(image: UIImageView) {
 		image.layer.borderWidth = 3
 		image.layer.masksToBounds = false
-		image.layer.borderColor = UIColor(named: "MyGreen")?.cgColor
+		image.layer.borderColor = UIColor(named: "MyPink")?.cgColor
 		image.layer.cornerRadius = image.frame.height / 2
 		image.clipsToBounds = true
 	}

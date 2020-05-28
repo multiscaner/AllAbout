@@ -159,4 +159,23 @@ class ProfileTableViewController: UITableViewController, UITextFieldDelegate, UI
 		default: break
 		}
 	}
+	
+	@IBAction func deleteProfile(_ sender: UIButton) {
+		let alert = UIAlertController(title: "Внимание!", message: "Вы действительно хотите удалить?", preferredStyle: UIAlertController.Style.alert)
+		alert.addAction(UIAlertAction(title: "Да", style: UIAlertAction.Style.default, handler: { (_ : UIAlertAction!) in
+			self.hud.show(in: self.view)
+			self.personHelper.deletePerson(person: self.person, completion: { success, error in
+				self.hud.dismiss()
+				if success {
+					self.navigationController?.popViewController(animated: true)
+				} else if let error = error {
+					let alert = UIAlertController(title: "Ошибка", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+					alert.addAction(UIAlertAction(title: "ОК", style: UIAlertAction.Style.default, handler: nil))
+					self.present(alert, animated: true, completion: nil)
+				}
+			})
+		}))
+		alert.addAction(UIAlertAction(title: "Отмена", style: UIAlertAction.Style.cancel, handler: nil))
+		self.present(alert, animated: true, completion: nil)
+	}
 }
