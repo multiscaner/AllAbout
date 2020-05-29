@@ -16,11 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="9xg-bP-6sO">
-                                <rect key="frame" x="40" y="143.5" width="295" height="373.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="9xg-bP-6sO">
+                                <rect key="frame" x="40" y="100" width="295" height="378.5"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="a@gmail.com" borderStyle="roundedRect" placeholder="E - mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qbp-7h-0cR">
-                                        <rect key="frame" x="0.0" y="0.0" width="295" height="37"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALLAbout" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCY-gc-u4a">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="80"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="50"/>
+                                        <color key="textColor" name="MyPink"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E - mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qbp-7h-0cR">
+                                        <rect key="frame" x="0.0" y="105" width="295" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="gQp-RU-qN1"/>
                                         </constraints>
@@ -28,14 +34,14 @@
                                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="aaaaa1" borderStyle="roundedRect" placeholder="Пароль" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3EV-X1-JLa">
-                                        <rect key="frame" x="0.0" y="87" width="295" height="36"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3EV-X1-JLa">
+                                        <rect key="frame" x="0.0" y="167" width="295" height="36"/>
                                         <color key="textColor" name="MyGreen"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" smartInsertDeleteType="no"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezO-kP-Pu5">
-                                        <rect key="frame" x="0.0" y="173" width="295" height="40"/>
+                                        <rect key="frame" x="0.0" y="228" width="295" height="40"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                         <state key="normal" title="Войти">
                                             <color key="titleColor" name="MyGreen"/>
@@ -45,7 +51,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzK-e5-hKX">
-                                        <rect key="frame" x="0.0" y="263" width="295" height="40"/>
+                                        <rect key="frame" x="0.0" y="293" width="295" height="40"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
                                         <state key="normal" title="Регистрация"/>
                                         <connections>
@@ -53,7 +59,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixw-TU-82A">
-                                        <rect key="frame" x="0.0" y="353" width="295" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="358" width="295" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.2343670762" blue="0.39375760850000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -66,7 +72,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9xg-bP-6sO" secondAttribute="bottom" constant="150" id="A4R-Dp-8yB"/>
+                            <constraint firstItem="9xg-bP-6sO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="5el-Qd-kIt"/>
                             <constraint firstItem="9xg-bP-6sO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="TOU-md-rKn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9xg-bP-6sO" secondAttribute="trailing" constant="40" id="lwC-PX-eSd"/>
                         </constraints>
@@ -81,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="215" y="124"/>
+            <point key="canvasLocation" x="213.59999999999999" y="123.68815592203899"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="P7O-5H-EuC">
@@ -91,11 +97,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="GXz-nR-11Q">
-                                <rect key="frame" x="40" y="193.5" width="295" height="283.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="GXz-nR-11Q">
+                                <rect key="frame" x="40" y="144" width="295" height="313.5"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALLAbout" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNy-uJ-x4M">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="80"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="50"/>
+                                        <color key="textColor" name="MyPink"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E - mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U28-bE-bhd">
-                                        <rect key="frame" x="0.0" y="0.0" width="295" height="37"/>
+                                        <rect key="frame" x="0.0" y="105" width="295" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="Ucd-GF-705"/>
                                         </constraints>
@@ -104,13 +116,13 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWg-ED-1fw">
-                                        <rect key="frame" x="0.0" y="87" width="295" height="36"/>
+                                        <rect key="frame" x="0.0" y="167" width="295" height="36"/>
                                         <color key="textColor" name="MyGreen"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" smartInsertDeleteType="no"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G5t-I9-9re">
-                                        <rect key="frame" x="0.0" y="173" width="295" height="40"/>
+                                        <rect key="frame" x="0.0" y="228" width="295" height="40"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                         <state key="normal" title="Зарегистрировать"/>
                                         <connections>
@@ -118,7 +130,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhW-CU-FPo">
-                                        <rect key="frame" x="0.0" y="263" width="295" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="293" width="295" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.2343670762" blue="0.39375760850000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -134,7 +146,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
                                     <navigationItem id="6CQ-iV-oYr">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.left" catalog="system" id="wON-6I-ikw">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="wON-6I-ikw">
                                             <connections>
                                                 <action selector="cancelSignUp:" destination="vYt-BK-s4i" id="zD6-fm-W6R"/>
                                             </connections>
@@ -147,8 +159,8 @@
                         <constraints>
                             <constraint firstItem="JYt-jb-kXu" firstAttribute="trailing" secondItem="jxH-5c-QcI" secondAttribute="trailing" id="5aX-aI-jGg"/>
                             <constraint firstItem="jxH-5c-QcI" firstAttribute="top" secondItem="JYt-jb-kXu" secondAttribute="top" id="6TK-Fw-lBA"/>
+                            <constraint firstItem="GXz-nR-11Q" firstAttribute="top" secondItem="jxH-5c-QcI" secondAttribute="bottom" constant="100" id="H4S-50-anO"/>
                             <constraint firstItem="jxH-5c-QcI" firstAttribute="leading" secondItem="JYt-jb-kXu" secondAttribute="leading" id="Mzx-E3-Ah2"/>
-                            <constraint firstItem="JYt-jb-kXu" firstAttribute="bottom" secondItem="GXz-nR-11Q" secondAttribute="bottom" constant="190" id="eRz-6a-Oq5"/>
                             <constraint firstItem="GXz-nR-11Q" firstAttribute="leading" secondItem="JYt-jb-kXu" secondAttribute="leading" constant="40" id="p56-Rf-YUQ"/>
                             <constraint firstItem="JYt-jb-kXu" firstAttribute="trailing" secondItem="GXz-nR-11Q" secondAttribute="trailing" constant="40" id="xXt-6N-gzd"/>
                         </constraints>
@@ -565,7 +577,6 @@
     <color key="tintColor" name="MyGreen"/>
     <resources>
         <image name="addPink" width="1501" height="1401"/>
-        <image name="arrow.left" catalog="system" width="128" height="98"/>
         <namedColor name="MyDarkGreen">
             <color red="0.44313725490196076" green="0.61960784313725492" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

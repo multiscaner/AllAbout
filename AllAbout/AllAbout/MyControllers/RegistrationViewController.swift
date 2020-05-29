@@ -39,7 +39,7 @@ class RegistrationViewController: UIViewController {
 		
 		let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
 		if Validator.isPasswordValid(pass: cleanedPassword) == false {
-			return "Пароль должен содержать буквы и цифры."
+			return "Пароль должен содержать минимум 6 символов - буквы и цифры."
 		}
 		return nil
 	}

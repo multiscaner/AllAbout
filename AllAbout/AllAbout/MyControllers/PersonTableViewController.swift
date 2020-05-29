@@ -57,6 +57,7 @@ class PersonTableViewController: UIViewController, UITableViewDelegate, UITableV
 			cell.personImage.af.setImage(withURL: url)
 			cell.firstLetterLabel.text = ""
 		} else {
+			cell.personImage.image = nil
 			cell.firstLetterLabel.text = String((person.name.first?.uppercased())!)
 		}
 		return cell
