@@ -30,6 +30,7 @@ class PersonTableViewController: UIViewController, UITableViewDelegate, UITableV
 				self.present(alert, animated: true, completion: nil)
 			} else {
 				self.persons = persons
+				self.tableView.isHidden = persons.isEmpty
 				self.tableView.reloadData()
 			}
 			self.hud.dismiss()
@@ -56,7 +57,7 @@ class PersonTableViewController: UIViewController, UITableViewDelegate, UITableV
 			cell.personImage.af.setImage(withURL: url)
 			cell.firstLetterLabel.text = ""
 		} else {
-			cell.firstLetterLabel.text = String(person.name.first!)
+			cell.firstLetterLabel.text = String((person.name.first?.uppercased())!)
 		}
 		return cell
 	}
@@ -71,7 +72,9 @@ class PersonTableViewController: UIViewController, UITableViewDelegate, UITableV
 	@IBAction func logOut(_ sender: UIBarButtonItem) {
 		do {
 			try Auth.auth().signOut()
-			dismiss(animated: true, completion: nil)
+			let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+			let viewController = storyboard.instantiateViewController(withIdentifier: "Login")
+			self.view.window?.rootViewController = viewController
 		} catch let error {
 			print(error)
 		}

@@ -28,6 +28,7 @@ class RegistrationViewController: UIViewController {
 		StyleHelper.createLine(textField: eMailTextField)
 		StyleHelper.createLine(textField: passwordTextField)
 		errorLabel.alpha = 0
+		passwordTextField.disableAutoFill()
 	}
 	
 	func validateFields() -> String? {
@@ -61,7 +62,10 @@ class RegistrationViewController: UIViewController {
 				if let error = error {
 					self.showError(error.localizedDescription)
 				} else {
-					self.dismiss(animated: true, completion: nil)
+					let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+					let viewController = storyboard.instantiateViewController(withIdentifier: "Navigation")
+					self.view.window?.rootViewController = viewController
+					
 				}
 			}
 		}

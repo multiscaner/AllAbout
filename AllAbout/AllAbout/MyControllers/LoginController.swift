@@ -23,8 +23,9 @@ class LoginController: UIViewController {
 		
 		setUpElements()
 		errorLabel.alpha = 0
-		
+		passwordTextField.disableAutoFill()
 	}
+	
 	@IBAction func toComeIn(_ sender: UIButton) {
 
 		let error = validateFields()

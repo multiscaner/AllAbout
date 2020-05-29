@@ -11,7 +11,7 @@
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginController" customModule="AllAbout" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="BYZ-38-t0r" customClass="LoginController" customModule="AllAbout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,7 +32,7 @@
                                         <rect key="frame" x="0.0" y="87" width="295" height="36"/>
                                         <color key="textColor" name="MyGreen"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" smartInsertDeleteType="no"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezO-kP-Pu5">
                                         <rect key="frame" x="0.0" y="173" width="295" height="40"/>
@@ -99,13 +99,15 @@
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="Ucd-GF-705"/>
                                         </constraints>
+                                        <color key="textColor" name="MyGreen"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWg-ED-1fw">
                                         <rect key="frame" x="0.0" y="87" width="295" height="36"/>
+                                        <color key="textColor" name="MyGreen"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" smartInsertDeleteType="no"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G5t-I9-9re">
                                         <rect key="frame" x="0.0" y="173" width="295" height="40"/>
@@ -170,6 +172,15 @@
                     <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wxa-tQ-Wcf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нажмите на +, чтобы добавить человека" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVW-wU-aJR">
+                                <rect key="frame" x="87.5" y="278.5" width="200" height="110.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="TRx-pE-Rh5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="23"/>
+                                <color key="textColor" name="MyGreen"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TUe-9k-5Zb">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -191,7 +202,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14y-iq-Xrl">
-                                                            <rect key="frame" x="40.5" y="-36" width="69" height="192"/>
+                                                            <rect key="frame" x="40.5" y="-28.5" width="69" height="192"/>
                                                             <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="120"/>
                                                             <color key="textColor" name="MyGreen"/>
                                                             <nil key="highlightedColor"/>
@@ -206,7 +217,7 @@
                                                         <constraint firstItem="Eac-T6-jWl" firstAttribute="top" secondItem="KTZ-Zt-OIk" secondAttribute="top" id="Tso-kC-JM3"/>
                                                         <constraint firstItem="14y-iq-Xrl" firstAttribute="centerX" secondItem="KTZ-Zt-OIk" secondAttribute="centerX" id="evj-tP-Zzu"/>
                                                         <constraint firstAttribute="trailing" secondItem="Eac-T6-jWl" secondAttribute="trailing" id="qcd-1j-LbS"/>
-                                                        <constraint firstItem="14y-iq-Xrl" firstAttribute="centerY" secondItem="KTZ-Zt-OIk" secondAttribute="centerY" multiplier="0.8" id="tg3-s0-cdy"/>
+                                                        <constraint firstItem="14y-iq-Xrl" firstAttribute="centerY" secondItem="KTZ-Zt-OIk" secondAttribute="centerY" multiplier="0.9" id="tg3-s0-cdy"/>
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ctC-S5-off">
@@ -254,11 +265,14 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="TUe-9k-5Zb" firstAttribute="centerY" secondItem="Wxa-tQ-Wcf" secondAttribute="centerY" id="03E-4N-cf0"/>
+                            <constraint firstItem="MVW-wU-aJR" firstAttribute="centerX" secondItem="Wxa-tQ-Wcf" secondAttribute="centerX" id="213-od-SYj"/>
                             <constraint firstItem="TUe-9k-5Zb" firstAttribute="centerX" secondItem="Wxa-tQ-Wcf" secondAttribute="centerX" id="74n-t1-fHM"/>
                             <constraint firstItem="TUe-9k-5Zb" firstAttribute="leading" secondItem="EIK-fw-BuF" secondAttribute="leading" id="SUm-wR-hq0"/>
                             <constraint firstItem="TUe-9k-5Zb" firstAttribute="top" secondItem="Wxa-tQ-Wcf" secondAttribute="top" id="eMj-MG-07O"/>
+                            <constraint firstItem="MVW-wU-aJR" firstAttribute="centerY" secondItem="Wxa-tQ-Wcf" secondAttribute="centerY" id="hMH-ZM-Rxc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EIK-fw-BuF"/>
                     </view>
@@ -469,7 +483,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znt-QX-ih3">
                                         <rect key="frame" x="0.0" y="161.5" width="200" height="51"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="24"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="24"/>
                                         <state key="normal" title="Принять">
                                             <color key="titleColor" name="MyGreen"/>
                                         </state>
@@ -559,7 +573,7 @@
             <color red="0.49799999594688416" green="0.89800000190734863" blue="0.75300002098083496" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="MyPink">
-            <color red="1" green="0.50316758066406397" blue="0.87576603589681246" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.50196078431372548" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
