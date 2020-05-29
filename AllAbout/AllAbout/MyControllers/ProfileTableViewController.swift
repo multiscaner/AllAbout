@@ -41,6 +41,7 @@ class ProfileTableViewController: UITableViewController, UITextFieldDelegate, UI
 			image.af.setImage(withURL: url)
 			firstLetterLabel.text = ""
 		} else {
+			person.image = nil
 			firstLetterLabel.text = String(person.name.first!)
 		}
 	}
@@ -55,6 +56,7 @@ class ProfileTableViewController: UITableViewController, UITextFieldDelegate, UI
 			image.contentMode = .scaleAspectFill
 			image.image = pickedImage
 			person.image = pickedImage
+			firstLetterLabel.text = ""
 		}
 		dismiss(animated: true, completion: nil)
 	}
