@@ -64,7 +64,7 @@ class PersonTableViewController: UIViewController, UITableViewDelegate, UITableV
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if let profileViewController = segue.destination as? ProfileTableViewController,
+		if let profileViewController = segue.destination as? PersonDetailsViewController,
 			let person = sender as? Person {
 			profileViewController.person = person
 		}
@@ -85,6 +85,6 @@ extension PersonTableViewController {
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let person = persons?[indexPath.row]
-		performSegue(withIdentifier: "profileSegue", sender: person)
+		performSegue(withIdentifier: "detailsSegue", sender: person)
 	}
 }

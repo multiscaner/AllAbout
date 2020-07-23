@@ -70,7 +70,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="9xg-bP-6sO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="5el-Qd-kIt"/>
                             <constraint firstItem="9xg-bP-6sO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="TOU-md-rKn"/>
@@ -254,7 +254,7 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
                                                 <constraint firstItem="KTZ-Zt-OIk" firstAttribute="centerX" secondItem="ryi-Of-UOy" secondAttribute="centerX" multiplier="0.6" id="Omz-YF-NK8"/>
                                                 <constraint firstItem="ctC-S5-off" firstAttribute="centerX" secondItem="ryi-Of-UOy" secondAttribute="centerX" multiplier="1.4" id="Sp6-tk-xDX"/>
@@ -277,7 +277,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="TUe-9k-5Zb" firstAttribute="centerY" secondItem="Wxa-tQ-Wcf" secondAttribute="centerY" id="03E-4N-cf0"/>
                             <constraint firstItem="MVW-wU-aJR" firstAttribute="centerX" secondItem="Wxa-tQ-Wcf" secondAttribute="centerX" id="213-od-SYj"/>
@@ -302,17 +302,39 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="TUe-9k-5Zb" id="DTo-Gm-IgW"/>
-                        <segue destination="wkK-yN-tAF" kind="show" identifier="profileSegue" id="8ea-Tf-yrV"/>
+                        <segue destination="Ioh-Kf-FqU" kind="show" identifier="detailsSegue" id="Bdw-SA-sYv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oYy-9K-vE7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1700" y="123.68815592203899"/>
         </scene>
-        <!--Profile Table View Controller-->
+        <!--Person Details View Controller-->
+        <scene sceneID="4Z0-0V-Zax">
+            <objects>
+                <viewController storyboardIdentifier="PersonDetailsViewController" id="Ioh-Kf-FqU" customClass="PersonDetailsViewController" customModule="AllAbout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tco-aY-hOP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="deS-Cp-Qiq"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Gnp-jF-HXm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="fVg-4p-pQ7">
+                            <connections>
+                                <segue destination="wkK-yN-tAF" kind="show" id="86g-PB-ps4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fp3-TZ-5OL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="953" y="887"/>
+        </scene>
+        <!--Person Edit View Controller-->
         <scene sceneID="wD2-8h-uc1">
             <objects>
-                <tableViewController storyboardIdentifier="ProfileTableViewController" id="wkK-yN-tAF" customClass="ProfileTableViewController" customModule="AllAbout" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ProfileTableViewController" id="wkK-yN-tAF" customClass="PersonEditViewController" customModule="AllAbout" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="oCb-F1-4rt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -366,24 +388,57 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="9e7-To-FVo" userLabel="Footer">
-                            <rect key="frame" x="0.0" y="316" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="316" width="375" height="72"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJb-2j-3mu">
-                                    <rect key="frame" x="153" y="2" width="69" height="40"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="3vz-Yr-kee">
+                                    <rect key="frame" x="36.5" y="11" width="77" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="kmb-Mi-oiC"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
-                                    <state key="normal" title="Удалить">
+                                    <state key="normal">
+                                        <string key="title">Добавить
+параметр</string>
                                         <color key="titleColor" name="MyPink"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="addCell:" destination="wkK-yN-tAF" eventType="touchUpInside" id="2Pr-0l-Fou"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="TJb-2j-3mu">
+                                    <rect key="frame" x="265.5" y="2.5" width="69" height="67"/>
+                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                    <state key="normal">
+                                        <string key="title">Удалить
+     всё</string>
+                                        <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="deleteProfile:" destination="wkK-yN-tAF" eventType="touchUpInside" id="cpx-r2-gUE"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="XsZ-Si-DwK">
+                                    <rect key="frame" x="151" y="2.5" width="73" height="67"/>
+                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                    <state key="normal">
+                                        <string key="title">Удалить 
+параметр</string>
+                                        <color key="titleColor" name="MyPink"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="deleteCell:" destination="wkK-yN-tAF" eventType="touchUpInside" id="e7W-Y9-iw4"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
+                                <constraint firstItem="XsZ-Si-DwK" firstAttribute="centerX" secondItem="9e7-To-FVo" secondAttribute="centerX" id="9xW-oR-CCv"/>
                                 <constraint firstItem="TJb-2j-3mu" firstAttribute="centerY" secondItem="9e7-To-FVo" secondAttribute="centerY" id="I1h-sK-Zyd"/>
-                                <constraint firstItem="TJb-2j-3mu" firstAttribute="centerX" secondItem="9e7-To-FVo" secondAttribute="centerX" id="cxj-1j-bfO"/>
+                                <constraint firstItem="3vz-Yr-kee" firstAttribute="centerY" secondItem="9e7-To-FVo" secondAttribute="centerY" id="K7G-Bu-qkj"/>
+                                <constraint firstItem="XsZ-Si-DwK" firstAttribute="centerY" secondItem="9e7-To-FVo" secondAttribute="centerY" id="a7L-aY-tOw"/>
+                                <constraint firstItem="TJb-2j-3mu" firstAttribute="centerX" secondItem="9e7-To-FVo" secondAttribute="centerX" multiplier="1.6" id="cxj-1j-bfO"/>
+                                <constraint firstItem="3vz-Yr-kee" firstAttribute="centerX" secondItem="9e7-To-FVo" secondAttribute="centerX" multiplier="0.4" id="eNo-N1-pjk"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -432,10 +487,10 @@
                             <outlet property="delegate" destination="wkK-yN-tAF" id="IAb-To-C6r"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="TI2-9f-b7K">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="r4d-gh-N5c">
+                    <navigationItem key="navigationItem" id="zZ3-qz-Bl4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="SDb-OU-a5m">
                             <connections>
-                                <action selector="savePerson:" destination="wkK-yN-tAF" id="btS-az-pAS"/>
+                                <action selector="savePerson:" destination="wkK-yN-tAF" id="Ne8-o0-WuN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -447,7 +502,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6b-QB-x2Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1700" y="887"/>
+            <point key="canvasLocation" x="1700" y="886.50674662668678"/>
         </scene>
         <!--Add New Person View Controller-->
         <scene sceneID="RWi-bR-DfT">
@@ -526,7 +581,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="tintColor" name="MyGreen"/>
                         <constraints>
                             <constraint firstItem="zAY-bu-7vg" firstAttribute="top" secondItem="fPx-dF-ArN" secondAttribute="top" id="0iH-PP-fsC"/>

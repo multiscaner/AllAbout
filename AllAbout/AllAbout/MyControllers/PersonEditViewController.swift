@@ -165,9 +165,26 @@ class PersonEditViewController: UITableViewController, UITextFieldDelegate, UIIm
 		default: break
 		}
 	}
+	@IBAction func deleteCell(_ sender: UIButton) {
+	}
+	@IBAction func addCell(_ sender: UIButton) {
+		let alertController = UIAlertController(title: "Добавьте", message: "Новый параметр", preferredStyle: UIAlertController.Style.alert)
+		alertController.addTextField { (textField) in
+			textField.placeholder = ""
+			alertController.addAction(UIAlertAction(title: "da", style: .default, handler: { (_ : UIAlertAction!) in
+				guard let text = textField.text else { return }
+				self.person.addUserSize(name: text)
+				self.tableView.reloadData()
+				self.personHelper.savePerson(person: self.person) { (result, error) in
+					
+				}
+			}))
+		}
+		self.present(alertController, animated: true, completion: nil)
+	}
 	
 	@IBAction func deleteProfile(_ sender: UIButton) {
-		let alert = UIAlertController(title: "Внимание!", message: "Вы действительно хотите удалить?", preferredStyle: UIAlertController.Style.alert)
+		let alert = UIAlertController(title: "Внимание!", message: "Вы действительно хотите удалить все данные \(person.name)?", preferredStyle: UIAlertController.Style.alert)
 		alert.addAction(UIAlertAction(title: "Да", style: UIAlertAction.Style.default, handler: { (_ : UIAlertAction!) in
 			self.hud.show(in: self.view)
 			self.personHelper.deletePerson(person: self.person, completion: { success, error in

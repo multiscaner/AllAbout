@@ -24,7 +24,7 @@ class PersonHelper {
 		let userDocument = firestore.document("users/\(currentUserId)")
 		return userDocument.collection("persons")
 	}
-
+	
 	func upload(name: String, photo: UIImage, completion: @escaping (URL?, Error?) -> Void) {
 		let refer = Storage.storage().reference().child("avatars").child(name)
 		
@@ -61,6 +61,7 @@ class PersonHelper {
 			}
 			
 			let persons = shapshot?.documents.map({ (document) -> Person in
+				
 				let dictionary = document.data()
 				let name = dictionary["name"] as? String
 				let imageUrl = dictionary["imageUrl"] as? String
@@ -69,7 +70,12 @@ class PersonHelper {
 				let weight = dictionary["weight"] as? Int
 				let shoesSize = dictionary["shoesSize"] as? Int
 				let socksSize = dictionary["socksSize"] as? Int
-				let person = Person(id: document.documentID, name: name ?? "", imageUrlString: imageUrl, date: date?.dateValue(), height: height, weight: weight, shoesSize: shoesSize, socksSize: socksSize)
+				let userSizesDictinaries = dictionary["userSizes"] as? [[String: String]]
+				let userSizes =  userSizesDictinaries?.map({ (item) -> UserSize in
+					let size = UserSize(name: item["name"] ?? "", value: item["value"] ?? "")
+					return size
+				})
+				let person = Person(id: document.documentID, name: name ?? "", imageUrlString: imageUrl, date: date?.dateValue(), height: height, weight: weight, shoesSize: shoesSize, socksSize: socksSize, userSizes: userSizes ?? [])
 				return person
 			})
 			
@@ -82,7 +88,7 @@ class PersonHelper {
 			completion(false, nil)
 			return
 		}
-	
+		
 		var personDocument: DocumentReference!
 		if let id = person.id {
 			personDocument = personsCollection.document(id)
@@ -98,6 +104,13 @@ class PersonHelper {
 		dictionary["weight"] = person.weight
 		dictionary["shoesSize"] = person.shoesSize
 		dictionary["socksSize"] = person.socksSize
+		
+		let userSizes = person.userSizes.map { (userData) -> [String: String] in
+			let dic = ["name": userData.name, "value": userData.value]
+			return dic
+		}
+		dictionary["userSizes"] = userSizes
+		
 		personDocument.setData(dictionary, merge: true)
 		
 		if let image = person.image {
@@ -106,7 +119,7 @@ class PersonHelper {
 					completion(false, error)
 					return
 				}
-
+				
 				personDocument.setData(["imageUrl": url.absoluteString], merge: true)
 				completion(true, nil)
 			}

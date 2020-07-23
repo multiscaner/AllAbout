@@ -9,7 +9,17 @@
 import Foundation
 import UIKit
 
-struct Person {
+class UserSize {
+	var name: String
+	var value: String = ""
+	
+	init(name: String, value: String = "") {
+		self.name = name
+		self.value = value
+	}
+}
+
+class Person {
 	var name: String
 	var id: String?
 	var image: UIImage?
@@ -25,6 +35,15 @@ struct Person {
 		dateFormatter.dateFormat = "dd MMM yyyy"
 		return dateFormatter.string(from: date)
 	}
+	var userSizes: [UserSize] = [UserSize(name: "Цвет глаз"), UserSize(name: "Блюдо")]
+	
+	func addUserSize(name: String) {
+		userSizes.append(UserSize(name: name))
+	}
+	
+	func removeUserSize(index: Int) {
+		userSizes.remove(at: index)
+	}
 
 	init(name: String, image: UIImage?, date: String) {
 		self.name = name
@@ -34,7 +53,7 @@ struct Person {
 		birthDate = dateFormatter.date(from: date) ?? Date()
 	}
 
-	init(id: String? = nil, name: String, imageUrlString: String?, date: Date?, height: Int?, weight: Int?, shoesSize: Int?, socksSize: Int?) {
+	init(id: String? = nil, name: String, imageUrlString: String?, date: Date?, height: Int?, weight: Int?, shoesSize: Int?, socksSize: Int?, userSizes: [UserSize]) {
 		self.name = name
 		self.imageUrlString = imageUrlString
 		self.id = id
@@ -43,5 +62,6 @@ struct Person {
 		self.weight = weight
 		self.shoesSize = shoesSize
 		self.socksSize = socksSize
+		self.userSizes = userSizes
 	}
 }
