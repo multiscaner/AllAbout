@@ -14,10 +14,10 @@ import FirebaseAuth
 enum PersonCell: Int, CaseIterable {
 	case name
 	case birthDate
-	case height
-	case weight
-	case shoesSize
-	case socksSize
+//	case height
+//	case weight
+//	case shoesSize
+//	case socksSize
 }
 
 class PersonEditViewController: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -97,7 +97,8 @@ class PersonEditViewController: UITableViewController, UITextFieldDelegate, UIIm
 		cell.profileCellTextField.tag = indexPath.row
 		cell.profileCellTextField.inputView = nil
 		
-		switch PersonCell(rawValue: indexPath.row) {
+		let cellType = PersonCell(rawValue: indexPath.row)
+		switch cellType {
 		case .name:
 			cell.profileCellLabel.text = "Имя:"
 			cell.profileCellTextField.text = person.name
@@ -109,30 +110,6 @@ class PersonEditViewController: UITableViewController, UITextFieldDelegate, UIIm
 			if let birthDateString = person.birthDateString {
 				cell.profileCellTextField.text = birthDateString
 			}
-		case .height:
-			cell.profileCellLabel.text = "Рост:"
-			if let height = person.height {
-				cell.profileCellTextField.text = String(height)
-			}
-			cell.profileCellTextField.keyboardType = .numberPad
-		case .weight:
-			cell.profileCellLabel.text = "Вес:"
-			if let weight = person.weight {
-				cell.profileCellTextField.text = String(weight)
-			}
-			cell.profileCellTextField.keyboardType = .numberPad
-		case .shoesSize:
-			cell.profileCellLabel.text = "Обувь:"
-			if let shoesSize = person.shoesSize {
-				cell.profileCellTextField.text = String(shoesSize)
-			}
-			cell.profileCellTextField.keyboardType = .numberPad
-		case .socksSize:
-			cell.profileCellLabel.text = "Носки:"
-			if let socksSize = person.socksSize {
-				cell.profileCellTextField.text = String(socksSize)
-			}
-			cell.profileCellTextField.keyboardType = .numberPad
 		default:
 			let userSize = person.userSizes[indexPath.row - PersonCell.allCases.count]
 			cell.profileCellLabel.text = userSize.name
@@ -151,22 +128,21 @@ class PersonEditViewController: UITableViewController, UITextFieldDelegate, UIIm
 	
 	func textFieldDidEndEditing(_ textField: UITextField) {
 		guard let text = textField.text else { return }
-		switch PersonCell(rawValue: textField.tag) {
+		let cellType = PersonCell(rawValue: textField.tag)
+		switch cellType {
 		case .name:
 			person.name = text
-		case .height:
-			person.height = Int(text)
-		case .weight:
-			person.weight = Int(text)
-		case .shoesSize:
-			person.shoesSize = Int(text)
-		case .socksSize:
-			person.socksSize = Int(text)
-		default: break
+		case .birthDate:
+			break
+		default:
+			let userSize = person.userSizes[textField.tag - PersonCell.allCases.count]
+			userSize.value = text
+			tableView.reloadData()
+			personHelper.savePerson(person: self.person) { (result, error) in
+			}
 		}
 	}
-	@IBAction func deleteCell(_ sender: UIButton) {
-	}
+	
 	@IBAction func addCell(_ sender: UIButton) {
 		let alertController = UIAlertController(title: "Добавьте", message: "Новый параметр", preferredStyle: UIAlertController.Style.alert)
 		alertController.addTextField { (textField) in
@@ -176,7 +152,6 @@ class PersonEditViewController: UITableViewController, UITextFieldDelegate, UIIm
 				self.person.addUserSize(name: text)
 				self.tableView.reloadData()
 				self.personHelper.savePerson(person: self.person) { (result, error) in
-					
 				}
 			}))
 		}

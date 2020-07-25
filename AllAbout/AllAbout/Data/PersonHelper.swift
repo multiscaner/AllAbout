@@ -66,16 +66,12 @@ class PersonHelper {
 				let name = dictionary["name"] as? String
 				let imageUrl = dictionary["imageUrl"] as? String
 				let date = dictionary["date"] as? Timestamp
-				let height = dictionary["height"] as? Int
-				let weight = dictionary["weight"] as? Int
-				let shoesSize = dictionary["shoesSize"] as? Int
-				let socksSize = dictionary["socksSize"] as? Int
 				let userSizesDictinaries = dictionary["userSizes"] as? [[String: String]]
 				let userSizes =  userSizesDictinaries?.map({ (item) -> UserSize in
 					let size = UserSize(name: item["name"] ?? "", value: item["value"] ?? "")
 					return size
 				})
-				let person = Person(id: document.documentID, name: name ?? "", imageUrlString: imageUrl, date: date?.dateValue(), height: height, weight: weight, shoesSize: shoesSize, socksSize: socksSize, userSizes: userSizes ?? [])
+				let person = Person(id: document.documentID, name: name ?? "", imageUrlString: imageUrl, date: date?.dateValue(), userSizes: userSizes ?? [])
 				return person
 			})
 			
@@ -100,10 +96,6 @@ class PersonHelper {
 		if let date = person.birthDate {
 			dictionary["date"] = Timestamp(date: date)
 		}
-		dictionary["height"] = person.height
-		dictionary["weight"] = person.weight
-		dictionary["shoesSize"] = person.shoesSize
-		dictionary["socksSize"] = person.socksSize
 		
 		let userSizes = person.userSizes.map { (userData) -> [String: String] in
 			let dic = ["name": userData.name, "value": userData.value]

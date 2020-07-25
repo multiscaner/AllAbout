@@ -25,17 +25,13 @@ class Person {
 	var image: UIImage?
 	var imageUrlString: String?
 	var birthDate: Date?
-	var height: Int?
-	var weight: Int?
-	var shoesSize: Int?
-	var socksSize: Int?
 	var birthDateString: String? {
 		guard let date = birthDate else { return nil }
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "dd MMM yyyy"
 		return dateFormatter.string(from: date)
 	}
-	var userSizes: [UserSize] = [UserSize(name: "Цвет глаз"), UserSize(name: "Блюдо")]
+	var userSizes: [UserSize]
 	
 	func addUserSize(name: String) {
 		userSizes.append(UserSize(name: name))
@@ -51,17 +47,14 @@ class Person {
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "dd MMM yyyy"
 		birthDate = dateFormatter.date(from: date) ?? Date()
+		self.userSizes = [UserSize(name: "Рост"), UserSize(name: "weight"), UserSize(name: "shoesSize"), UserSize(name: "socksSize"), UserSize(name: "Цвет глаз"), UserSize(name: "Блюдо")]
 	}
 
-	init(id: String? = nil, name: String, imageUrlString: String?, date: Date?, height: Int?, weight: Int?, shoesSize: Int?, socksSize: Int?, userSizes: [UserSize]) {
+	init(id: String? = nil, name: String, imageUrlString: String?, date: Date?, userSizes: [UserSize]) {
 		self.name = name
 		self.imageUrlString = imageUrlString
 		self.id = id
 		self.birthDate = date
-		self.height = height
-		self.weight = weight
-		self.shoesSize = shoesSize
-		self.socksSize = socksSize
 		self.userSizes = userSizes
 	}
 }

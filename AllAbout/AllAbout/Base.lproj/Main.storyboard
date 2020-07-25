@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -418,25 +418,11 @@
                                         <action selector="deleteProfile:" destination="wkK-yN-tAF" eventType="touchUpInside" id="cpx-r2-gUE"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="XsZ-Si-DwK">
-                                    <rect key="frame" x="151" y="2.5" width="73" height="67"/>
-                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
-                                    <state key="normal">
-                                        <string key="title">Удалить 
-параметр</string>
-                                        <color key="titleColor" name="MyPink"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="deleteCell:" destination="wkK-yN-tAF" eventType="touchUpInside" id="e7W-Y9-iw4"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstItem="XsZ-Si-DwK" firstAttribute="centerX" secondItem="9e7-To-FVo" secondAttribute="centerX" id="9xW-oR-CCv"/>
                                 <constraint firstItem="TJb-2j-3mu" firstAttribute="centerY" secondItem="9e7-To-FVo" secondAttribute="centerY" id="I1h-sK-Zyd"/>
                                 <constraint firstItem="3vz-Yr-kee" firstAttribute="centerY" secondItem="9e7-To-FVo" secondAttribute="centerY" id="K7G-Bu-qkj"/>
-                                <constraint firstItem="XsZ-Si-DwK" firstAttribute="centerY" secondItem="9e7-To-FVo" secondAttribute="centerY" id="a7L-aY-tOw"/>
                                 <constraint firstItem="TJb-2j-3mu" firstAttribute="centerX" secondItem="9e7-To-FVo" secondAttribute="centerX" multiplier="1.6" id="cxj-1j-bfO"/>
                                 <constraint firstItem="3vz-Yr-kee" firstAttribute="centerX" secondItem="9e7-To-FVo" secondAttribute="centerX" multiplier="0.4" id="eNo-N1-pjk"/>
                             </constraints>
