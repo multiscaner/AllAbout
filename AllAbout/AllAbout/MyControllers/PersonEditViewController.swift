@@ -100,10 +100,12 @@ class PersonEditViewController: UITableViewController, UITextFieldDelegate, UIIm
 		let cellType = PersonCell(rawValue: indexPath.row)
 		switch cellType {
 		case .name:
+			cell.MinusButton.isHidden = true
 			cell.profileCellLabel.text = "Имя:"
 			cell.profileCellTextField.text = person.name
 			cell.profileCellTextField.keyboardType = .default
 		case .birthDate:
+			cell.MinusButton.isHidden = true
 			cell.profileCellTextField.inputView = datePicker
 			cell.profileCellLabel.text = "Дата рождения:"
 			dateTextField = cell.profileCellTextField

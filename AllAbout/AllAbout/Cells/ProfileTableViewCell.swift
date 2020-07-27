@@ -12,6 +12,7 @@ class ProfileTableViewCell: UITableViewCell {
 	
 	@IBOutlet weak var profileCellTextField: UITextField!
 	@IBOutlet weak var profileCellLabel: UILabel!
+	@IBOutlet weak var MinusButton: UIButton!
 	
 	override func awakeFromNib() {
         super.awakeFromNib()

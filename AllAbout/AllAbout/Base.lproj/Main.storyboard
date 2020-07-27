@@ -392,7 +392,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="3vz-Yr-kee">
-                                    <rect key="frame" x="36.5" y="11" width="77" height="50"/>
+                                    <rect key="frame" x="18" y="11" width="77" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="kmb-Mi-oiC"/>
                                     </constraints>
@@ -407,7 +407,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="TJb-2j-3mu">
-                                    <rect key="frame" x="265.5" y="2.5" width="69" height="67"/>
+                                    <rect key="frame" x="284.5" y="2.5" width="69" height="67"/>
                                     <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                     <state key="normal">
                                         <string key="title">Удалить
@@ -423,8 +423,8 @@
                             <constraints>
                                 <constraint firstItem="TJb-2j-3mu" firstAttribute="centerY" secondItem="9e7-To-FVo" secondAttribute="centerY" id="I1h-sK-Zyd"/>
                                 <constraint firstItem="3vz-Yr-kee" firstAttribute="centerY" secondItem="9e7-To-FVo" secondAttribute="centerY" id="K7G-Bu-qkj"/>
-                                <constraint firstItem="TJb-2j-3mu" firstAttribute="centerX" secondItem="9e7-To-FVo" secondAttribute="centerX" multiplier="1.6" id="cxj-1j-bfO"/>
-                                <constraint firstItem="3vz-Yr-kee" firstAttribute="centerX" secondItem="9e7-To-FVo" secondAttribute="centerX" multiplier="0.4" id="eNo-N1-pjk"/>
+                                <constraint firstItem="TJb-2j-3mu" firstAttribute="centerX" secondItem="9e7-To-FVo" secondAttribute="centerX" multiplier="1.7" id="cxj-1j-bfO"/>
+                                <constraint firstItem="3vz-Yr-kee" firstAttribute="centerX" secondItem="9e7-To-FVo" secondAttribute="centerX" multiplier="0.3" id="eNo-N1-pjk"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -445,7 +445,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8RY-Ic-wwp">
-                                            <rect key="frame" x="195" y="21.5" width="150" height="37"/>
+                                            <rect key="frame" x="160" y="21.5" width="150" height="37"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="150" id="ZFL-wv-jAf"/>
                                             </constraints>
@@ -453,16 +453,28 @@
                                             <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DD-Ls-dRS">
+                                            <rect key="frame" x="330" y="20" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="28m-Bu-7Li"/>
+                                                <constraint firstAttribute="height" constant="40" id="3Ur-K1-Bhs"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <state key="normal" image="minus"/>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="0DD-Ls-dRS" firstAttribute="centerY" secondItem="gvb-K2-j1s" secondAttribute="centerY" id="3o2-ty-RPe"/>
                                         <constraint firstItem="sAi-n7-yXH" firstAttribute="leading" secondItem="gvb-K2-j1s" secondAttribute="leading" constant="30" id="76m-CV-ktk"/>
-                                        <constraint firstAttribute="trailing" secondItem="8RY-Ic-wwp" secondAttribute="trailing" constant="30" id="HZa-Ma-evq"/>
                                         <constraint firstItem="8RY-Ic-wwp" firstAttribute="centerY" secondItem="gvb-K2-j1s" secondAttribute="centerY" id="QJl-Bw-Tef"/>
+                                        <constraint firstItem="0DD-Ls-dRS" firstAttribute="leading" secondItem="8RY-Ic-wwp" secondAttribute="trailing" constant="20" id="eFb-Sh-RoC"/>
                                         <constraint firstItem="8RY-Ic-wwp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sAi-n7-yXH" secondAttribute="trailing" constant="8" symbolic="YES" id="qjm-Ki-BjH"/>
+                                        <constraint firstAttribute="trailing" secondItem="0DD-Ls-dRS" secondAttribute="trailing" constant="5" id="sg3-bn-yr4"/>
                                         <constraint firstItem="sAi-n7-yXH" firstAttribute="centerY" secondItem="gvb-K2-j1s" secondAttribute="centerY" id="yYo-wd-dIU"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="MinusButton" destination="0DD-Ls-dRS" id="fbN-bZ-PAe"/>
                                     <outlet property="profileCellLabel" destination="sAi-n7-yXH" id="oMD-00-oIr"/>
                                     <outlet property="profileCellTextField" destination="8RY-Ic-wwp" id="EzV-53-6Zh"/>
                                 </connections>
@@ -618,6 +630,7 @@
     <color key="tintColor" name="MyGreen"/>
     <resources>
         <image name="addPink" width="1501" height="1401"/>
+        <image name="minus" width="32" height="32"/>
         <namedColor name="MyDarkGreen">
             <color red="0.44313725490196076" green="0.61960784313725492" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
