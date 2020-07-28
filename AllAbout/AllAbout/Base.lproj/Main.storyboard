@@ -445,7 +445,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8RY-Ic-wwp">
-                                            <rect key="frame" x="160" y="21.5" width="150" height="37"/>
+                                            <rect key="frame" x="170" y="21.5" width="150" height="37"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="150" id="ZFL-wv-jAf"/>
                                             </constraints>
@@ -461,13 +461,16 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <state key="normal" image="minus"/>
+                                            <connections>
+                                                <action selector="deleteRow:" destination="wkK-yN-tAF" eventType="touchUpInside" id="oNR-oh-aCn"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="0DD-Ls-dRS" firstAttribute="centerY" secondItem="gvb-K2-j1s" secondAttribute="centerY" id="3o2-ty-RPe"/>
                                         <constraint firstItem="sAi-n7-yXH" firstAttribute="leading" secondItem="gvb-K2-j1s" secondAttribute="leading" constant="30" id="76m-CV-ktk"/>
                                         <constraint firstItem="8RY-Ic-wwp" firstAttribute="centerY" secondItem="gvb-K2-j1s" secondAttribute="centerY" id="QJl-Bw-Tef"/>
-                                        <constraint firstItem="0DD-Ls-dRS" firstAttribute="leading" secondItem="8RY-Ic-wwp" secondAttribute="trailing" constant="20" id="eFb-Sh-RoC"/>
+                                        <constraint firstItem="0DD-Ls-dRS" firstAttribute="leading" secondItem="8RY-Ic-wwp" secondAttribute="trailing" constant="10" id="eFb-Sh-RoC"/>
                                         <constraint firstItem="8RY-Ic-wwp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sAi-n7-yXH" secondAttribute="trailing" constant="8" symbolic="YES" id="qjm-Ki-BjH"/>
                                         <constraint firstAttribute="trailing" secondItem="0DD-Ls-dRS" secondAttribute="trailing" constant="5" id="sg3-bn-yr4"/>
                                         <constraint firstItem="sAi-n7-yXH" firstAttribute="centerY" secondItem="gvb-K2-j1s" secondAttribute="centerY" id="yYo-wd-dIU"/>
@@ -485,13 +488,7 @@
                             <outlet property="delegate" destination="wkK-yN-tAF" id="IAb-To-C6r"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="zZ3-qz-Bl4">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="SDb-OU-a5m">
-                            <connections>
-                                <action selector="savePerson:" destination="wkK-yN-tAF" id="Ne8-o0-WuN"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="zZ3-qz-Bl4"/>
                     <connections>
                         <outlet property="firstLetterLabel" destination="SM5-GP-Lz2" id="Z7y-V7-KlD"/>
                         <outlet property="image" destination="ucK-NS-tC3" id="hep-i9-xpi"/>

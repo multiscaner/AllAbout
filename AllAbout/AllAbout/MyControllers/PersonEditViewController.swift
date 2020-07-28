@@ -14,10 +14,6 @@ import FirebaseAuth
 enum PersonCell: Int, CaseIterable {
 	case name
 	case birthDate
-//	case height
-//	case weight
-//	case shoesSize
-//	case socksSize
 }
 
 class PersonEditViewController: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -61,7 +57,7 @@ class PersonEditViewController: UITableViewController, UITextFieldDelegate, UIIm
 		dismiss(animated: true, completion: nil)
 	}
 	
-	@IBAction func savePerson(_ sender: Any) {
+	func savePerson(_ sender: Any) {
 		view.endEditing(true)
 		hud.show(in: self.view)
 		personHelper.savePerson(person: person, completion: { success, error in
@@ -98,12 +94,14 @@ class PersonEditViewController: UITableViewController, UITextFieldDelegate, UIIm
 		cell.profileCellTextField.inputView = nil
 		
 		let cellType = PersonCell(rawValue: indexPath.row)
+		cell.MinusButton.tag = indexPath.row - PersonCell.allCases.count
 		switch cellType {
 		case .name:
 			cell.MinusButton.isHidden = true
 			cell.profileCellLabel.text = "Имя:"
 			cell.profileCellTextField.text = person.name
 			cell.profileCellTextField.keyboardType = .default
+			cell.profileCellTextField.isEnabled = false
 		case .birthDate:
 			cell.MinusButton.isHidden = true
 			cell.profileCellTextField.inputView = datePicker
@@ -112,6 +110,7 @@ class PersonEditViewController: UITableViewController, UITextFieldDelegate, UIIm
 			if let birthDateString = person.birthDateString {
 				cell.profileCellTextField.text = birthDateString
 			}
+			cell.profileCellTextField.isEnabled = false
 		default:
 			let userSize = person.userSizes[indexPath.row - PersonCell.allCases.count]
 			cell.profileCellLabel.text = userSize.name
@@ -177,5 +176,22 @@ class PersonEditViewController: UITableViewController, UITextFieldDelegate, UIIm
 		}))
 		alert.addAction(UIAlertAction(title: "Отмена", style: UIAlertAction.Style.cancel, handler: nil))
 		self.present(alert, animated: true, completion: nil)
+	}
+	
+	@IBAction func deleteRow(_ sender: UIButton) {
+		let alert = UIAlertController(title: "Sign out?", message: "You can always access your content by signing back in",         preferredStyle: UIAlertController.Style.alert)
+		
+		alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { _ in
+			//Cancel Action
+		}))
+		alert.addAction(UIAlertAction(title: "Sign out",
+									  style: UIAlertAction.Style.default,
+									  handler: {(_: UIAlertAction!) in
+										self.person.removeUserSize(index: sender.tag)
+										self.tableView.reloadData()
+										self.personHelper.savePerson(person: self.person) { (result, error) in
+										}
+		}))
+        self.present(alert, animated: true, completion: nil)
 	}
 }
