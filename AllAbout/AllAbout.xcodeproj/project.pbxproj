@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93162B5C24D130D400C09EFA /* ParameterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93162B5B24D130D400C09EFA /* ParameterCell.swift */; };
 		932DEF4D2470451F001645EF /* StyleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932DEF4C2470451F001645EF /* StyleHelper.swift */; };
 		933E746A24647F6E00D4424D /* PersonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933E746924647F6E00D4424D /* PersonHelper.swift */; };
 		934E5E9024C6EE4500863A58 /* PersonDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E5E8F24C6EE4500863A58 /* PersonDetailsViewController.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		11BED0B144F93E193E022735 /* Pods-AllAbout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllAbout.debug.xcconfig"; path = "Target Support Files/Pods-AllAbout/Pods-AllAbout.debug.xcconfig"; sourceTree = "<group>"; };
 		3691E3C9AFB4A0E9586370CD /* Pods-AllAbout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllAbout.release.xcconfig"; path = "Target Support Files/Pods-AllAbout/Pods-AllAbout.release.xcconfig"; sourceTree = "<group>"; };
+		93162B5B24D130D400C09EFA /* ParameterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterCell.swift; sourceTree = "<group>"; };
 		932DEF4C2470451F001645EF /* StyleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleHelper.swift; sourceTree = "<group>"; };
 		933E746924647F6E00D4424D /* PersonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonHelper.swift; sourceTree = "<group>"; };
 		934E5E8F24C6EE4500863A58 /* PersonDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				93B2A7FD246C30A100155E3D /* PersonImageViewCell.swift */,
 				93C87A06247AD64C006CD318 /* ProfileTableViewCell.swift */,
+				93162B5B24D130D400C09EFA /* ParameterCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				933E746A24647F6E00D4424D /* PersonHelper.swift in Sources */,
 				93596BB72463FD5900BEB8FE /* Person.swift in Sources */,
 				934FA3B8245C172700492A89 /* PersonTableViewController.swift in Sources */,
+				93162B5C24D130D400C09EFA /* ParameterCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

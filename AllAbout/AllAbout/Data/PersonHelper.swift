@@ -48,6 +48,35 @@ class PersonHelper {
 		}
 	}
 	
+	func readPerson(id: String, completion: @escaping (Person?, Error?) -> Void) {
+		guard let personsCollection = personsCollection else {
+			completion(nil, nil)
+			return
+		}
+		
+		let document: DocumentReference = personsCollection.document(id)
+		
+		document.getDocument { (document, error) in
+			if let document = document, let dictionary = document.data() {
+				let name = dictionary["name"] as? String
+				let imageUrl = dictionary["imageUrl"] as? String
+				let date = dictionary["date"] as? Timestamp
+				let userSizesDictinaries = dictionary["userSizes"] as? [[String: String]]
+				let userSizes =  userSizesDictinaries?.map({ (item) -> UserSize in
+					let size = UserSize(name: item["name"] ?? "", value: item["value"] ?? "")
+					return size
+				})
+				let person = Person(id: document.documentID, name: name ?? "", imageUrlString: imageUrl, date: date?.dateValue(), userSizes: userSizes ?? [])
+				completion(person, nil)
+			} else {
+				completion(nil, error)
+			}
+		}
+		
+		
+	}
+	
+	
 	func readPersons(completion: @escaping ([Person], Error?) -> Void) {
 		guard let personsCollection = personsCollection else {
 			completion([], nil)

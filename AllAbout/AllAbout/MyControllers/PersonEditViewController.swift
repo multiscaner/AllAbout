@@ -193,5 +193,8 @@ class PersonEditViewController: UITableViewController, UITextFieldDelegate, UIIm
 										}
 		}))
         self.present(alert, animated: true, completion: nil)
+		tableView.reloadData()
+		self.personHelper.savePerson(person: self.person) { (result, error) in
+		}
 	}
 }
