@@ -315,43 +315,44 @@
                 <viewController storyboardIdentifier="PersonDetailsViewController" id="Ioh-Kf-FqU" customClass="PersonDetailsViewController" customModule="AllAbout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tco-aY-hOP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k6v-fZ-atF">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k6v-fZ-atF">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="parameterCell" rowHeight="63" id="t5N-dA-rhw" customClass="ParameterCell" customModule="AllAbout" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="63"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="parameterCell" rowHeight="85" id="t5N-dA-rhw" customClass="ParameterCell" customModule="AllAbout" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t5N-dA-rhw" id="gfQ-YV-Hwu" customClass="ParameterCell" customModule="AllAbout" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t5N-dA-rhw" id="gfQ-YV-Hwu">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6j-uo-jcc">
-                                                    <rect key="frame" x="30" y="18" width="43.5" height="27.5"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXP-X4-M1f">
+                                                    <rect key="frame" x="30" y="26.5" width="19" height="32"/>
+                                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
                                                     <color key="textColor" name="MyGreen"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBN-ot-ZN9">
-                                                    <rect key="frame" x="301.5" y="18" width="43.5" height="27.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="222" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2c-jb-WRD">
+                                                    <rect key="frame" x="306.5" y="29" width="38.5" height="27.5"/>
                                                     <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                                     <color key="textColor" name="MyGreen"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="kBN-ot-ZN9" firstAttribute="centerY" secondItem="gfQ-YV-Hwu" secondAttribute="centerY" id="2wK-Gf-JXO"/>
-                                                <constraint firstItem="o6j-uo-jcc" firstAttribute="centerY" secondItem="gfQ-YV-Hwu" secondAttribute="centerY" id="7Kh-bI-vQ2"/>
-                                                <constraint firstItem="kBN-ot-ZN9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="o6j-uo-jcc" secondAttribute="trailing" constant="8" symbolic="YES" id="84j-ej-qzq"/>
-                                                <constraint firstItem="o6j-uo-jcc" firstAttribute="leading" secondItem="gfQ-YV-Hwu" secondAttribute="leading" constant="30" id="NfM-Y8-Qwv"/>
-                                                <constraint firstAttribute="trailing" secondItem="kBN-ot-ZN9" secondAttribute="trailing" constant="30" id="oJT-Y9-7Qu"/>
+                                                <constraint firstItem="V2c-jb-WRD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eXP-X4-M1f" secondAttribute="trailing" constant="8" symbolic="YES" id="AQ6-IA-YfH"/>
+                                                <constraint firstItem="eXP-X4-M1f" firstAttribute="leading" secondItem="gfQ-YV-Hwu" secondAttribute="leading" constant="30" id="ARH-XM-Cc9"/>
+                                                <constraint firstItem="eXP-X4-M1f" firstAttribute="centerY" secondItem="gfQ-YV-Hwu" secondAttribute="centerY" id="Ni5-LZ-ZWN"/>
+                                                <constraint firstItem="V2c-jb-WRD" firstAttribute="centerY" secondItem="gfQ-YV-Hwu" secondAttribute="centerY" id="XPC-70-dAt"/>
+                                                <constraint firstAttribute="trailing" secondItem="V2c-jb-WRD" secondAttribute="trailing" constant="30" id="pOE-3T-zQO"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="parameterNameLabel" destination="o6j-uo-jcc" id="Qd0-LF-AHV"/>
-                                            <outlet property="parameterValueLabel" destination="kBN-ot-ZN9" id="iwp-t6-VJ0"/>
+                                            <outlet property="parameterNameLabel" destination="eXP-X4-M1f" id="dbd-oQ-iv7"/>
+                                            <outlet property="parameterValueLabel" destination="V2c-jb-WRD" id="Loe-ag-fCh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -363,10 +364,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="k6v-fZ-atF" firstAttribute="top" secondItem="deS-Cp-Qiq" secondAttribute="top" id="58h-Wc-Yoi"/>
-                            <constraint firstItem="k6v-fZ-atF" firstAttribute="leading" secondItem="deS-Cp-Qiq" secondAttribute="leading" id="Ho6-2n-8VD"/>
-                            <constraint firstItem="deS-Cp-Qiq" firstAttribute="bottom" secondItem="k6v-fZ-atF" secondAttribute="bottom" id="bSS-g2-Gai"/>
-                            <constraint firstItem="deS-Cp-Qiq" firstAttribute="trailing" secondItem="k6v-fZ-atF" secondAttribute="trailing" id="nRR-A1-q0u"/>
+                            <constraint firstItem="k6v-fZ-atF" firstAttribute="bottom" secondItem="deS-Cp-Qiq" secondAttribute="bottom" id="L4k-rA-z3f"/>
+                            <constraint firstItem="k6v-fZ-atF" firstAttribute="leading" secondItem="deS-Cp-Qiq" secondAttribute="leading" id="NfQ-4d-LvR"/>
+                            <constraint firstItem="k6v-fZ-atF" firstAttribute="top" secondItem="deS-Cp-Qiq" secondAttribute="top" id="OU8-DG-0fa"/>
+                            <constraint firstItem="k6v-fZ-atF" firstAttribute="trailing" secondItem="deS-Cp-Qiq" secondAttribute="trailing" id="Ua5-dq-fsE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="deS-Cp-Qiq"/>
                     </view>

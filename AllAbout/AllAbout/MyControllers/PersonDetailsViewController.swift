@@ -22,6 +22,7 @@ class PersonDetailsViewController: UIViewController, UITableViewDelegate, UITabl
 			}
 			self.tableView.reloadData()
 		}
+		tableView.separatorStyle = .none
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
