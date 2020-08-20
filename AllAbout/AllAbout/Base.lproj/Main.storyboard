@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="9xg-bP-6sO">
-                                <rect key="frame" x="40" y="100" width="295" height="403.5"/>
+                                <rect key="frame" x="40" y="100" width="295" height="384.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALLAbout" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCY-gc-u4a">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="80"/>
@@ -26,23 +26,23 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E - mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qbp-7h-0cR">
-                                        <rect key="frame" x="0.0" y="110" width="295" height="37"/>
+                                        <rect key="frame" x="0.0" y="110" width="295" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="gQp-RU-qN1"/>
                                         </constraints>
                                         <color key="textColor" name="MyGreen"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3EV-X1-JLa">
-                                        <rect key="frame" x="0.0" y="177" width="295" height="36"/>
+                                        <rect key="frame" x="0.0" y="174" width="295" height="34"/>
                                         <color key="textColor" name="MyGreen"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" smartInsertDeleteType="no"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezO-kP-Pu5">
-                                        <rect key="frame" x="0.0" y="243" width="295" height="40"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="238" width="295" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Войти">
                                             <color key="titleColor" name="MyGreen"/>
                                         </state>
@@ -51,15 +51,15 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzK-e5-hKX">
-                                        <rect key="frame" x="0.0" y="313" width="295" height="40"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="301" width="295" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Регистрация"/>
                                         <connections>
                                             <segue destination="vYt-BK-s4i" kind="presentation" modalPresentationStyle="fullScreen" id="Pfu-r5-YLd"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixw-TU-82A">
-                                        <rect key="frame" x="0.0" y="383" width="295" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="364" width="295" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.2343670762" blue="0.39375760850000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -98,7 +98,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="GXz-nR-11Q">
-                                <rect key="frame" x="40" y="144" width="295" height="333.5"/>
+                                <rect key="frame" x="40" y="144" width="295" height="321.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALLAbout" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNy-uJ-x4M">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="80"/>
@@ -107,30 +107,30 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E - mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U28-bE-bhd">
-                                        <rect key="frame" x="0.0" y="110" width="295" height="37"/>
+                                        <rect key="frame" x="0.0" y="110" width="295" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="Ucd-GF-705"/>
                                         </constraints>
                                         <color key="textColor" name="MyGreen"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWg-ED-1fw">
-                                        <rect key="frame" x="0.0" y="177" width="295" height="36"/>
+                                        <rect key="frame" x="0.0" y="174" width="295" height="34"/>
                                         <color key="textColor" name="MyGreen"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" smartInsertDeleteType="no"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G5t-I9-9re">
-                                        <rect key="frame" x="0.0" y="243" width="295" height="40"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="238" width="295" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Зарегистрировать"/>
                                         <connections>
                                             <action selector="signUp:" destination="vYt-BK-s4i" eventType="touchUpInside" id="5Cx-hM-QLN"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhW-CU-FPo">
-                                        <rect key="frame" x="0.0" y="313" width="295" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="301" width="295" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.2343670762" blue="0.39375760850000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -214,8 +214,8 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14y-iq-Xrl">
-                                                            <rect key="frame" x="40.5" y="-28.5" width="69" height="192"/>
-                                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="120"/>
+                                                            <rect key="frame" x="43.5" y="-4" width="63" height="143.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="120"/>
                                                             <color key="textColor" name="MyGreen"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -241,7 +241,7 @@
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="RVK-Cq-H9E"/>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="37" id="qF3-2W-93s"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="23"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                             <color key="textColor" name="MyGreen"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -322,7 +322,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="parameterCell" rowHeight="85" id="t5N-dA-rhw" customClass="ParameterCell" customModule="AllAbout" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="parameterCell" rowHeight="85" id="t5N-dA-rhw" customClass="ParameterCell" customModule="AllAbout" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t5N-dA-rhw" id="gfQ-YV-Hwu">
@@ -330,14 +330,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXP-X4-M1f">
-                                                    <rect key="frame" x="30" y="26.5" width="19" height="32"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                                    <rect key="frame" x="30" y="30.5" width="28" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" name="MyGreen"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="222" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2c-jb-WRD">
-                                                    <rect key="frame" x="306.5" y="29" width="38.5" height="27.5"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                                    <rect key="frame" x="315" y="32.5" width="30" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="MyGreen"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -405,8 +405,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SM5-GP-Lz2">
-                                            <rect key="frame" x="40.5" y="-36" width="69" height="192"/>
-                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="120"/>
+                                            <rect key="frame" x="43.5" y="-11.5" width="63" height="143.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="120"/>
                                             <color key="textColor" name="MyGreen"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -447,11 +447,11 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="3vz-Yr-kee">
-                                    <rect key="frame" x="18" y="11" width="77" height="50"/>
+                                    <rect key="frame" x="17.5" y="11" width="78" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="kmb-Mi-oiC"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <state key="normal">
                                         <string key="title">Добавить
 параметр</string>
@@ -462,8 +462,8 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="TJb-2j-3mu">
-                                    <rect key="frame" x="284.5" y="2.5" width="69" height="67"/>
-                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                    <rect key="frame" x="286.5" y="9.5" width="65" height="53"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <state key="normal">
                                         <string key="title">Удалить
      всё</string>
@@ -491,21 +491,21 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAi-n7-yXH">
-                                            <rect key="frame" x="30" y="26.5" width="100" height="27.5"/>
+                                            <rect key="frame" x="30" y="30" width="100" height="20.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="BcK-VD-AZF"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="MyGreen"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8RY-Ic-wwp">
-                                            <rect key="frame" x="170" y="21.5" width="150" height="37"/>
+                                            <rect key="frame" x="170" y="23" width="150" height="34"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="150" id="ZFL-wv-jAf"/>
                                             </constraints>
                                             <color key="textColor" name="MyGreen"/>
-                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DD-Ls-dRS">
@@ -575,32 +575,32 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0RC-6b-UWc">
-                                <rect key="frame" x="87.5" y="305" width="200" height="212.5"/>
+                                <rect key="frame" x="87.5" y="305" width="200" height="189.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выбрать фото" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVq-FV-6pg">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="27.5"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="MyGreen"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите имя" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eMs-3p-1hV">
-                                        <rect key="frame" x="0.0" y="47.5" width="200" height="37"/>
+                                        <rect key="frame" x="0.0" y="40.5" width="200" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="y7h-td-uDZ"/>
                                         </constraints>
                                         <color key="textColor" name="MyGreen"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Дата рождения" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2fP-rd-TLA">
-                                        <rect key="frame" x="0.0" y="104.5" width="200" height="37"/>
+                                        <rect key="frame" x="0.0" y="94.5" width="200" height="34"/>
                                         <color key="textColor" name="MyGreen"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znt-QX-ih3">
-                                        <rect key="frame" x="0.0" y="161.5" width="200" height="51"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="24"/>
+                                        <rect key="frame" x="0.0" y="148.5" width="200" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Принять">
                                             <color key="titleColor" name="MyGreen"/>
                                         </state>
